@@ -1,0 +1,468 @@
+/* Floating Button */
+.fab-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.sos-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+  background: rgba(251, 250, 250, 0);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+
+.fab-btn > img.phone-gif {
+  width: 54px;      
+  height: 54px;     
+}
+
+.fab-btn .sos-badge img.phone-gif {
+  width: 35px;
+  height: 35px;
+}
+
+/* Quick Call Panel */
+.fab-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2000;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.fab-panel.hidden {
+  display: none;
+}
+
+.fab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #000;
+}
+
+.fab-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+.btn.call-now {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+}
+.btn.schedule {
+  background: #fff;
+  border: 2px solid orange;
+  color: orange;
+}
+
+.fab-tip {
+  font-size: 0.8rem;
+  color: #444;
+  background: #fff6e5;
+  border-left: 3px solid #ff9800;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1.4;
+}
+
+.fab-panel input[type="text"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.fab-panel input[type="text"]:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.25);
+}
+
+/* Overlay (Incoming Call) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+.overlay.hidden {
+  display: none;
+}
+
+.call-box {
+  background: #111;
+  padding: 28px 24px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* SOS Avatar (Pulsing) */
+.caller-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff4b2b, #d90429);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+  animation: pulseSOS 1.8s infinite;
+}
+@keyframes pulseSOS {
+  0% { box-shadow: 0 0 0 0 rgba(255,77,77,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(255,77,77,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,77,77,0); }
+}
+
+.call-box h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.call-box p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+
+/* Call Action Buttons */
+.call-actions {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* more spacing like phone UI */
+  margin-top: 20px;
+}
+
+.call-actions .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.call-actions button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.call-actions button:hover {
+  transform: scale(1.1);
+}
+
+/* Decline button */
+.call-actions .decline {
+  background: #ff3b30; /* iOS red */
+  box-shadow: 0 6px 12px rgba(255,59,48,0.4);
+}
+
+/* Accept button */
+.call-actions .accept {
+  background: #34c759; /* iOS green */
+  box-shadow: 0 6px 12px rgba(52,199,89,0.4);
+}
+
+/* Labels */
+.call-actions .label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+}
+
+
+/* Decline Button */
+.btn.end {
+  background: linear-gradient(145deg, #ff4b2b, #c8102e);
+  color: #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(255,77,77,0.4);
+  cursor: pointer;
+}
+
+/* Accept Button */
+.btn.accept {
+  background: linear-gradient(145deg, #22c55e, #15803d);
+  box-shadow: 0 6px 12px rgba(34,197,94,0.4);
+}
+
+.overlay-tip {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+/* Optional phone GIF inside button */
+.phone-gif {
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+/* ===== Pill-style call buttons (like screenshot) ===== */
+.call-actions--pill{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:18px;
+}
+
+/* Override the old circle-button rule inside pill layout */
+.call-actions--pill button{
+  width:auto !important;
+  height:auto !important;
+  border-radius:12px !important;
+  font-size:1rem !important;
+  padding:.75rem 1rem !important;
+  color:yellow;
+  line-height:1;
+  box-shadow:none;
+  transform:none;
+}
+
+/* New pill buttons */
+.action-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  border:1px solid transparent;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .2s ease, filter .15s ease;
+}
+
+/* Icon + text sizes */
+.action-btn .icon{ font-size:1.1rem; line-height:1; }
+.action-btn .txt{ letter-spacing:.01em; }
+
+/* Colors like the screenshot */
+.action-btn.decline{
+  background:#f5a20a;              /* red */
+  border-color:#df760e;
+  color:#fff;
+  box-shadow:0 6px 12px rgba(239,68,68,.35);
+}
+.action-btn.accept{
+  background:#22c55e;              /* green */
+  border-color:#15803d;
+  color:#fff;
+  box-shadow:0 6px 12px rgba(34,197,94,.35);
+}
+
+/* Hover/active/focus */
+.action-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.18); }
+.action-btn:active{ transform:translateY(0); filter:saturate(1.05); }
+.action-btn:focus-visible{
+  outline:3px solid rgba(255,255,255,.6);
+  outline-offset:2px;
+}
+
+/* Small screens: keep them comfy */
+@media (max-width: 360px){
+  .call-actions--pill{ gap:8px; }
+  .action-btn{ padding:.65rem .85rem; }
+}
+
+.overlay .overlay-tip{
+  margin-top: 12px;
+}
+
+/* --- One-time opt-out row --- */
+.record-opt{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  margin-top:.35rem;
+  font-size:.95rem;
+  font-weight:600;
+  color:#0f172a;                 /* strong default text */
+}
+.gw-dark .record-opt{ color:#e5e7eb; }   /* if you have a dark theme */
+
+/* high-contrast, accessible checkbox */
+.record-opt input[type="checkbox"]{
+  appearance:auto;         /* keep native for a11y, style with accent-color */
+  width:18px;height:18px;
+  accent-color:#7c3aed;    /* purple tick (change if you like) */
+  cursor:pointer;
+}
+
+/* focus styles (keyboard users) */
+.record-opt input[type="checkbox"]:focus-visible{
+  outline:3px solid rgba(124,58,237,.45);
+  outline-offset:2px;
+  border-radius:4px;
+}
+
+/* keep text readable when user drags/selects it */
+.record-opt::selection,
+.record-opt *::selection{
+  background:#c7d2fe;   /* light indigo */
+  color:#111;           /* dark text for contrast */
+}
+
+/* optional hover hint */
+.record-opt:hover{ opacity:.95; }
+
+.call-box .rec-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.45rem;
+  margin:12px auto 4px;
+  padding:.40rem .75rem;
+  border-radius:999px;
+
+  /* win against inherited/older rules */
+  border:1.5px solid #ef4444 !important;
+  background:rgba(239,68,68,.16) !important;
+  color:#fff !important;
+
+  font-weight:800;
+  font-size:.95rem;
+  line-height:1;
+  box-shadow:0 8px 20px rgba(239,68,68,.28);
+}
+
+/* tiny pulse on the icon (if present) */
+.call-box .rec-badge .rec-icon{
+  width:18px; height:18px; display:block;
+  transform-origin:center;
+  animation:recPulse 1.6s ease-in-out infinite;
+}
+@keyframes recPulse{
+  0%{transform:scale(1);opacity:.95}
+  50%{transform:scale(1.12);opacity:1}
+  100%{transform:scale(1);opacity:.95}
+}
+
+/* fallback: show a red dot even if the <img> fails */
+.call-box .rec-badge::before{
+  content:"";
+  width:10px;height:10px;border-radius:50%;
+  background:#ef4444;
+  box-shadow:0 0 0 3px rgba(239,68,68,.18);
+}
+.call-box .rec-badge.rec-badge--icon::before{ content:none; } /* don’t double-dot when using the image */
+
+/* utility */
+.hidden{ display:none !important; }
+
+/* Glassy modal look */
+.call-box{
+  background:rgba(17,17,17,.55);                 /* translucent */
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* optional—subtle gradient halo around the SOS avatar */
+.caller-avatar{
+  position:relative;
+}
+.caller-avatar::after{
+  content:"";
+  position:absolute; inset:-8px;
+  border-radius:50%;
+  background:radial-gradient(60% 60% at 50% 40%, rgba(239,68,68,.35), transparent 70%);
+  filter:blur(6px);
+  z-index:-1;
+}
+.call-box .rec-badge { margin-top: 10px; }
+
+
+.action-btn.ec-end {
+  background: #ef4444;          /* red-500 */
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35);
+}
+.action-btn.ec-end .txt { color: #fff; }
+.action-btn.ec-end .icon { filter: none; }
+
+.action-btn.ec-end:hover {
+  background: #dc2626;          /* red-600 */
+  box-shadow: 0 8px 22px rgba(220, 38, 38, 0.45);
+}

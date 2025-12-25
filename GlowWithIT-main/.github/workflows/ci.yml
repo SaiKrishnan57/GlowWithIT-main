@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Lint • Django Checks • Security • SonarCloud
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout & Python
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 2) Cache pip
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      # 3) Install runtime (if present) + dev tools
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install black ruff pip-audit bandit
+          # pip install mypy django-stubs  # ← uncomment when you want type checks
+
+      # 4) Lint & format
+      - name: Lint & format
+        run: |
+          black --check .
+          ruff check .
+
+      # 5) Django sanity checks (non-fatal while bootstrapping)
+      - name: Django checks
+        run: |
+          if [ -f manage.py ]; then
+            python manage.py check || true
+            python manage.py makemigrations --check --dry-run || true
+          fi
+
+      # 6) SonarCloud (dashboard & PR decorations)
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
+        env:
+            SONAR_HOST_URL: https://sonarcloud.io
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
+      # 7) Security scans (soft-fail for now)
+      - name: Dependency audit (pip-audit)
+        run: pip-audit || true
+
+      - name: Static security analysis (bandit)
+        run: bandit -q -r . || true
+
+      # 8) Optional: mypy (disabled until you add types/stubs)
+      # - name: Type check (mypy)
+      #   run: mypy .
+
+      # 9) Optional: tests & coverage (enable when ready)
+      # - name: Run tests & coverage
+      #   run: |
+      #     pytest -q --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml
+      # - name: Upload coverage to Sonar (uncomment above first)
+      #   uses: SonarSource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

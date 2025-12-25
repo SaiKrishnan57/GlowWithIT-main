@@ -1,0 +1,256 @@
+
+.news-zone {
+    
+    overflow: visible;
+}
+
+
+
+.news-glow {
+
+  position: absolute; inset: -10% -5% -15% -5%;
+  
+  background:
+    radial-gradient(60rem 30rem at 15% 10%, rgba(99,102,241,.30), transparent 55%),
+    radial-gradient(50rem 25rem at 85% 20%, rgba(236,72,153,.25), transparent 60%);
+   
+  filter: blur(30px) saturate(120%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowshift 16s ease-in-out infinite alternate;
+}
+
+
+.news-viewport {
+
+    overflow: hidden;
+    backdrop-filter:blur(4px);
+    position: relative; 
+    z-index: 1;
+}
+
+
+.news-track {
+
+  display:flex; 
+  gap: 1rem;
+  will-change:transform;
+  transition: transform .55s cubic-bezier(.22, .61, .36, 1);
+  cursor: grab;
+  user-select: none;
+}
+
+.news-card {
+
+  position: relative;
+  flex: 0 0 18rem;
+  max-width: 18rem;
+  min-height:11.5rem;
+  perspective:800px;
+}
+
+
+
+.news-card-face {
+
+  background: rgba(255,255,255,.04);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 10px 28px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.06);
+  transform: rotateY(0) translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+
+.news-card:hover .news-card-face,
+.news-card:focus-within .news-card-face {
+
+  transform: rotateY(-3deg) translateZ(6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+#newsPrev, #newsNext{
+  background: rgba(255,255,255,.08);
+  color: #e5e7eb;
+  border: 2px solid rgba(255,255,255,.24);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+#newsPrev:hover, #newsNext:hover{
+  filter: brightness(1.05);
+}
+
+
+
+#newsPrev, #newsNext{
+  /* make outline buttons readable without relying on .btn-outline-light defaults */
+  --bs-btn-color: #e5e7eb;
+  --bs-btn-border-color: rgba(255,255,255,.28);
+  --bs-btn-hover-bg: rgba(255,255,255,.12);
+  --bs-btn-hover-border-color: rgba(255,255,255,.5);
+  --bs-border-width: 2px;
+  background: rgba(255,255,255,.08);
+  color: #e5e7eb;
+  border: 2px solid rgba(255,255,255,.28);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* ensure the arrow icon uses the button color (no washed-out opacity) */
+#newsPrev i, #newsNext i{
+  color: inherit !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+
+
+
+
+
+.news-viewport{
+  
+  --news-card-w: 18rem;
+  --news-card-min-h: 16rem;
+}
+
+.news-track{
+  align-items: stretch;                /* rows share the tallest height */
+}
+
+.news-card{
+  flex: 0 0 var(--news-card-w);
+  max-width: var(--news-card-w);
+  display: flex;                       /* allow child to stretch to full height */
+}
+
+.news-card-face{
+  height: 100%;
+  min-height: var(--news-card-min-h);
+  display: grid;                     
+  grid-template-rows: auto auto 1fr auto; 
+}
+
+.news-card h6{
+  margin: 0 0 .5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;           
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-card p{
+  margin: 0 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;           
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.news-card .read-more{
+  margin-top: auto;                    
+  position: relative;                 
+  z-index: 1;
+}
+
+
+/* ===== BRIGHT — Lilac/Mauve news slider fixes ===== */
+.gw-bright{
+  --b-ink:           #2a1b3e;   /* dark aubergine for headings */
+  --b-purple:        #7c3aed;   /* primary purple */
+  --b-purple-dark:   #5b21b6;   /* darker stroke/border */
+  --b-border:        rgba(124,58,237,.30);
+  --news-body:       color-mix(in srgb, var(--b-ink) 85%, #fff);
+  --news-muted:      color-mix(in srgb, var(--b-ink) 60%, #fff);
+  --news-bg-1:       color-mix(in srgb, #fff 90%, #C9B6D9 10%); /* lilac paper */
+  --news-bg-2:       color-mix(in srgb, #fff 94%, #8A7282 6%);  /* mauve wash  */
+}
+
+/* Frame + cards use dark-purple borders (no yellow/white) */
+.gw-bright #empower .news-viewport{
+  background: linear-gradient(160deg, var(--news-bg-1), var(--news-bg-2));
+  border: 2px solid var(--b-purple-dark) !important;
+  border-radius: 16px;
+  color: var(--news-body);
+}
+.gw-bright #empower .news-card-face{
+  background: linear-gradient(160deg, var(--news-bg-1), var(--news-bg-2));
+  border: 1px solid var(--b-border);
+  color: var(--news-body);
+  box-shadow: 0 10px 22px rgba(36,27,51,.10), inset 0 1px 0 rgba(255,255,255,.55);
+}
+
+/* Typography inside cards (override any white utility classes) */
+.gw-bright #empower .news-card h6,
+.gw-bright #empower .news-card .card-title{
+  color: var(--b-ink) !important;
+}
+.gw-bright #empower .news-card p{
+  color: var(--news-body) !important;
+}
+.gw-bright #empower .news-card .meta,
+.gw-bright #empower .news-card time,
+.gw-bright #empower .news-card small{
+  color: var(--news-muted) !important;
+}
+.gw-bright #empower .news-card a,
+.gw-bright #empower .news-card .read-more{
+  color: var(--b-purple) !important;
+  text-decoration: underline;
+}
+
+/* Kill lingering “white” helpers inside the slider */
+.gw-bright #empower .news-card .text-white,
+.gw-bright #empower .news-card .link-light{
+  color: var(--b-ink) !important;
+}
+
+.gw-bright #newsPrev,
+.gw-bright #newsNext{
+  color: var(--b-purple-dark) !important;              /* arrow inherits this */
+  border-color: var(--b-purple-dark) !important;
+  background: color-mix(in srgb, var(--b-purple) 12%, #fff) !important;
+  box-shadow: 0 6px 16px rgba(124,58,237,.18) !important;
+}
+.gw-bright #newsPrev:hover,
+.gw-bright #newsNext:hover{
+  background: color-mix(in srgb, var(--b-purple) 18%, #fff);
+  border-color: var(--b-purple);
+}
+.gw-bright #newsPrev i,
+.gw-bright #newsNext i,
+.gw-bright #newsPrev svg,
+.gw-bright #newsNext svg{
+  color: currentColor !important;
+  fill: currentColor;
+  stroke: currentColor;
+  opacity: 1 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes glowshift {
+
+  0%   {
+    transform: translateY(0px)
+}
+  100% {
+    transform: translateY(-14px)
+}
+}
+
+@media (max-width: 768px) {
+
+  .news-card {
+    flex-basis: 85%; max-width: 85%;
+  }
+}
+

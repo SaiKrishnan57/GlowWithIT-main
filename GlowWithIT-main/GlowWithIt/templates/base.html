@@ -1,0 +1,152 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}WalkWithIt{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Resource Hints: Connect to Google Maps/unpkg in advance to reduce first packet latency -->
+  <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//maps.googleapis.com">
+  <link rel="dns-prefetch" href="//maps.gstatic.com">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="//unpkg.com">
+
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.png' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/data-carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/insight.css' %}">
+  <link rel="stylesheet" href="{% static 'css/support.css' %}">
+  <link rel="stylesheet" href="{% static 'css/awareness.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news-slider.css' %}">
+  <link rel="stylesheet" href="{% static 'css/landing_fakecall.css' %}">
+  <link rel="stylesheet" href="{% static 'css/emergency-quick-call.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hazard-report.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin="" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <!-- Anti-flash: hide page if gate is locked -->
+  <style id="pw-gate-af">
+    html[data-pw-locked="1"] { visibility: hidden; }
+
+    @font-face{
+      font-family: "SuperSunday Shape";
+      src: url("/static/fonts/SuperSunday.ttf")   format("truetype");
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+
+
+  </style>
+
+  <script>
+  /* Run before first paint to avoid any flash of content */
+  (function () {
+    var FLAG = "password_passed";
+    var unlocked =
+      (sessionStorage.getItem(FLAG) === "1") ||
+      (localStorage.getItem(FLAG) === "1");
+
+    // Pages that don't need gating
+    var path = location.pathname;
+    var exempt = [
+      /^\/$/,             // home (shows overlay)
+      /^\/static\//,      // assets
+      /^\/admin\//,       // admin
+      /^\/api\//,         // APIs
+      /^\/favicon\.ico$/
+    ].some(function (rx) { return rx.test(path); });
+
+    if (!unlocked && !exempt) {
+      // prevent paint, then bounce to /
+      document.documentElement.setAttribute("data-pw-locked", "1");
+      var next = encodeURIComponent(path + location.search + location.hash);
+      location.replace("/?next=" + next);
+    } else {
+      // explicitly allow paint
+      document.documentElement.removeAttribute("data-pw-locked");
+    }
+  })();
+  </script>
+
+</head>
+
+<!---This html file is served as the global base that template for GlowWithIt.
+It defines the shared CSS/JS assets, the reusable Navbar and Footer sections,
+and two main template blocks for page content and per-page scripts. -->
+<body>
+
+  <!-- This is for reusing Navbar section -->
+  {% include "includes/_navbar.html" %}
+
+   <!-- This is for the main content of the page -->
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main> 
+
+  <!-- This is for reusing Footer section -->
+  {% include "includes/_footer.html" %}
+<!-- This is for reusing brightness toggle section -->
+  {% include "includes/bright_mode.html" %}
+
+    {% include "emergency-quick-call.html" %}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+  
+  <script type="module" src="{% static 'js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  <script type="module" src="{% static 'js/bright-mode.js' %}"></script>
+  <script defer src="{% static 'js/safety-map.js' %}"></script>
+    {% block scripts %}{% endblock %}
+
+
+
+
+<!-- Tutorial complete toast -->
+<div id="mapCoachDone" class="map-coach-done" aria-hidden="true" role="dialog">
+  <div class="mcd-card" role="document" aria-labelledby="mcdTitle">
+    <img class="mcd-gif" src="/static/images/complete_tutorial.gif" alt="Tutorial complete animation">
+    <h3 id="mcdTitle" class="mcd-title">You're all set!</h3>
+    <p class="mcd-text">
+      The Interactive Safety Map is ready to use. Try searching a route, toggling Street Lighting,
+      or exploring nearby safe venues.
+    </p>
+    <div class="mcd-actions">
+      <button type="button" id="mcdClose" class="btn-spotlight is-seen">Start using the map</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Spotlight coach overlay -->
+<div id="mapCoach" class="map-coach" aria-hidden="true">
+  <div id="mapCoachHole" class="coach-hole" aria-hidden="true"></div>
+  <div id="mapCoachTip" class="coach-tip" role="dialog" aria-live="polite" aria-modal="true">
+    <div id="mapCoachText" class="coach-body">...</div>
+    <div class="coach-nav">
+      <button id="mapCoachSkip" class="coach-btn" type="button">Skip</button>
+      <div style="flex:1"></div>
+      <button id="mapCoachBack" class="coach-btn" type="button">Back</button>
+      <button id="mapCoachNext" class="coach-btn next" type="button">Next</button>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
+

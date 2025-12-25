@@ -1,0 +1,195 @@
+/*serves as a global colour attribute section*/
+:root{
+
+    --rose:#e11d48;   /* For visuals related to awareness, assign red colour  */
+    --amber:#f59e0b;   /* For visuals related to STOPIT, assign orangeish colour  */
+    --emerald:#10b981; /* For visuals related to  positive insights, assign green colour  */
+    --blue:#3b82f6;
+    --gray:#64748b;
+}
+
+body {
+    
+    background:#0e1424; color:#fff;
+}
+
+.section-wrap {
+    padding:40px 0;
+}
+
+.section-wrap .container {
+
+    max-width:1320px;
+}
+
+/* Theme each section with a different colours to reflect its state */
+.bg-awareness { 
+
+    --theme-status: var(--rose);
+    background: radial-gradient(1200px 500px at 10% -20%, rgba(225,29,72,.18), transparent 60%),
+                linear-gradient(135deg, #1a0e12, #0e1424);
+}
+
+.bg-stopit { 
+    --theme-status: var(--amber);
+    background: radial-gradient(1200px 500px at 10% -20%, rgba(245,158,11,.18), transparent 60%),
+                linear-gradient(135deg, #15110a, #0e1628);
+}
+
+.bg-positive { 
+
+    --theme-status: var(--emerald);
+    background: radial-gradient(1200px 500px at 10% -20%, rgba(16,185,129,.18), transparent 60%),
+                linear-gradient(135deg, #0d1613, #0e1424);
+}
+
+.stat-grid-2 {
+
+    display:grid;
+    gap:24px;
+    align-items:center;
+    grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+}
+
+.stat-grid-2.flip > :first-child {
+
+    order:2;
+}
+
+.stat-grid-2.flip > :last-child {
+
+    order:1;
+}
+
+.fact-card{
+
+    position:relative; border-radius:16px; padding:18px;
+    background: rgba(255,255,255,.06);
+    backdrop-filter:blur(6px);
+    color:#eef2ff; 
+    border:1px solid color-mix(in oklab, var(--theme-status) 35%, #fff 0%);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--theme-status) 20%, transparent),
+                0 6px 20px rgba(0,0,0,.25);
+}
+
+.chart-frame{
+
+    background: linear-gradient(135deg, color-mix(in oklab, var(--theme-status) 18%, #020617), rgba(2,6,23,.6));
+    position:relative;
+    border-radius:12px;
+     width: 100%;
+     max-width: 100%;
+    min-height: 260px;  
+    overflow:hidden;
+    box-sizing: border-box;
+    border:1px solid color-mix(in oklab, var(--theme-status) 45%, transparent);
+}
+
+.chart-frame canvas {
+
+  display: block;   
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.narration-cloud{
+
+    background:rgba(255,255,255,.08);
+    color:#e6edf8;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;
+    padding:16px 18px;
+    position:relative;
+}
+
+
+
+.stat-lg{ 
+
+    font-weight:800;
+    font-size:clamp(28px,5vw,40px);
+    color:var(--theme-status); 
+}
+
+.stat-h3{
+
+    font-weight:700;
+    font-size:clamp(18px,3.2vw,24px);
+    margin:6px 0 4px;
+}
+
+.stat-body{
+
+    color:#cbd5e1;
+} 
+
+.stat-source{ 
+    margin-top:8px;
+    color:#94a3b8;
+    font-size:.9rem;
+}
+
+.viz-block.is-hidden{
+
+    display:none !important;
+}
+
+.section-wrap.is-collapsed{
+    display:none !important;
+}
+
+
+@media (min-width: 576px) {
+    
+    .chart-frame { min-height: 320px; } 
+}
+
+
+
+@media (max-width:900px){ 
+    
+    .stat-grid-2 {
+        grid-template-columns:1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    
+    .chart-frame { 
+        min-height: 380px;
+    }
+}
+
+/* One accent per visualization block */
+.viz-block { --accent: #7c3aed; } /* default (purple) */
+
+/* left chart shell (adjust selectors to yours if needed) */
+.viz-block .chart-frame {
+  border: 2px solid color-mix(in oklab, var(--accent) 38%, transparent);
+  box-shadow: 0 12px 26px color-mix(in oklab, var(--accent) 18%, transparent);
+  border-radius: 14px;
+}
+
+/* right info panel (STOPIT card, etc.) */
+.viz-block .women-support__panel,
+.viz-block .info-panel {
+  border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+  box-shadow: 0 10px 22px color-mix(in oklab, var(--accent) 14%, transparent);
+}
+
+/* Bright mode: right-panel (narration) text tint */
+.gw-bright .viz-block .narration-cloud .stat-body,
+.gw-bright .viz-block .narration-cloud .legend,
+.gw-bright .viz-block .narration-cloud .muted,
+.gw-bright .viz-block .narration-cloud small {
+  color: #4c1d95 !important; /* dark violet */
+}
+
+.gw-bright .viz-block .narration-cloud .stat-h3 {
+  color: #4c1d95 !important; /* dark purple */
+}
+.gw-bright .viz-block .narration-cloud{
+  border: 1px solid color-mix(in oklab, var(--accent, #7c3aed) 45%, transparent);
+  box-shadow: 0 10px 22px color-mix(in oklab, var(--accent, #7c3aed) 14%, transparent);
+}
+

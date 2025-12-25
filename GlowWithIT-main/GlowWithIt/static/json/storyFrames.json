@@ -1,0 +1,120 @@
+{
+  "step-1": {
+
+    "walking": {
+      "title": "I’ll be walking",
+      "subcontent": "On foot for part or all of the trip."
+    },
+    "tram/train": {
+      "title": "Hopping on tram/train",
+      "subcontent": "Using public transport."
+    },
+    "rideshare": {
+      "title": "Grabbing a taxi or rideshare (e.g. Uber)",
+      "subcontent": "A convenient option for late-night travel."
+    },
+
+    "driving": {
+      "title": "Driving myself",
+      "subcontent": "It's safer and more comfortable."
+    }
+  },
+
+  "step-2": {
+    "before-10": {
+      "title": "Before 10 PM",
+      "subcontent": "Streets are still lively and well-lit."
+    },
+    "10-12": {
+      "title": "10 PM – 12 AM",
+      "subcontent": "The city’s slowing down between pockets of activity."
+    },
+    "after-midnight": {
+      "title": "After Midnight",
+      "subcontent": "Quieter hours; lighting and visibility matter most."
+    }
+  },
+
+  "step-3": {
+
+    "harassment": {
+      "title": "Dealing with harassment or unwanted attention",
+      "subcontent": "Comments, staring or following behaviour."
+    },
+    "isolation": {
+      "title": "Being alone in empty streets",
+      "subcontent": "Few people around."
+    },
+    "poor-lighting": {
+      "title": "Streets that aren’t well-lit",
+      "subcontent": "Dim light, shadows and blind corners."
+    },
+    "lost": {
+      "title": "Feeling lost",
+      "subcontent": "Unfamiliar turns, detours or confusing layouts."
+    }
+  },
+
+  "step-4": {
+
+    "busy-bright": {
+      "title": "Somewhere busy & bright",
+      "subcontent": "Restaurants, transport hubs, places with people around."
+    },
+    "quiet-crowded": {
+      "title": "Somewhere quiet but crowded",
+      "subcontent": "Cafés, libraries, shopping malls."
+    }
+  },
+
+  "step-5": {
+    
+    "gt60": {
+      "title": "Strong & steady (> 60%)",
+      "subcontent": "My juice is good for me to use maps and make calls."
+    },
+    "30-60": {
+      "title": "Half tank (30–60%)",
+      "subcontent": "Enough for the trip with a little care."
+    },
+    "<30": {
+      "title": "Running low (<30%)",
+      "subcontent": "Save power."
+    }
+  },
+
+  "step-6": {
+    "alone": {
+      "title": "Alone",
+      "subcontent": "Solo for most or all of the journey."
+    },
+    "friend": {
+      "title": "With a friend",
+      "subcontent": "Travelling or checking in together."
+    },
+    "group": {
+      "title": "In a group",
+      "subcontent": "Moving with others most of the way."
+    }
+  },
+
+  "step-7": {
+
+    "sos": {
+      "title": "Instant access to emergency numbers",
+      "subcontent": "Quick-dial 000 / 106 / 112 and helplines."
+    },
+    "location-share": {
+      "title": "Share my live location with a buddy",
+      "subcontent": "A simple link to let someone watch your route."
+    },
+    "timer": {
+      "title": "A reminder to check-in after 5 minutes",
+      "subcontent": "Gentle reminder so someone knows you’re home."
+    },
+    "venues": {
+      "title": "Show me safer places around",
+      "subcontent": "Brighter or well-lit nearby spaces."
+    }
+  }
+}

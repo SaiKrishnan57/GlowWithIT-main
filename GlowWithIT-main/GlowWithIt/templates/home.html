@@ -1,0 +1,1035 @@
+{# templates/home.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}WalkWithIT — Home{% endblock %}
+
+{% block content %}
+
+<!-- Passcode Gate for blocking users without having the correct passcode -->
+<div
+  id="pw-gate-input"
+  class="pw-gate-input"
+  role="dialog">
+  <div class="pw-card">
+
+    <h2 id="pw-card-title" class="pw-card-title">Enter passcode</h2>
+
+    <label class="pw-label" for="pw-input">Passcode</label>
+    <input
+      id="pw-input"
+      class="pw-input"
+      type="password"
+      placeholder="••••••"
+      autocomplete="current-password"
+    />
+
+    <button id="pw-submit" class="pw-btn" type="button">Enter</button>
+    <div id="pw-error" class="pw-error"></div>
+  </div>
+</div>
+
+<!-- emergency contacts -->
+<section class="py-2 emergency-banner">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2 text-white small">
+    <div class="fw-semibold">Need help now?</div>
+    <div class="d-flex flex-wrap gap-3">
+      <a class="link-light text-decoration-underline" href="tel:000">Emergency 000 </a>
+      <a class="link-light text-decoration-underline" href="tel:1800737732">1800RESPECT 1800 737 732</a>
+      <a class="link-light text-decoration-underline" href="tel:131114">Lifeline 13 11 14</a>
+      <a class="link-light text-decoration-underline" href="tel:1800015188">Safe Steps 1800 015 188</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <style>
+    #mapCoachText{ white-space: pre-line; }
+  </style>
+
+
+<!--Main content of the glowwithit project-->
+<div class="glowwithit-content">
+
+  <!--banner Section- with background image -->
+  <section class="banner d-flex align-items-center"
+  style="background: url('/static/images/bright-background.jpeg') no-repeat center 28%; background-size:cover;">
+  <div class="container banner-inner">
+    <div class="row justify-content-start">
+      <div class="col-lg-7 col-md-9">
+
+        <!--glass wrapper -->
+        <div class="hero-glass">
+          <span class="banner-badge mb-3">
+            <i class="bi-heart-fill"></i>
+            For Women. By Community.
+          </span>
+
+          <h1 class="banner-title display-3 mb-3">
+            We See You. We<span class="highlight"> Get It.</span>
+          </h1>
+
+          <p class="banner-subtext fs-4 mb-3 text-muted-2">
+           You deserve to walk with confidence, knowing you're supported and feel safe in the City of Melbourne.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#svm-loc-prompt" class="btn btn-hero-glow" aria-label="Find your safe route">
+              <span class="btn-label">Find Your Safe Route</span>
+              <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </a>
+
+            <a href="{% url 'voice_call' %}"  class="btn btn-hero-glow btn-sim-call">
+              <span class="btn-label">Make a Simulation Call</span>
+              <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <!-- glass wrapper -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--Self-Assessment Section-->
+  <section class="py-5" id="empower">
+    <div class="container">
+
+      <!-- News Slider -->
+      {% include "news_slider.html" %}
+
+      <!-- Your Personal Safety Journey -->
+      <div id="preCardBlock" class="text-center mb-5">
+        <div class="badge rounded-pill px-3 py-2 mb-3 mt-3 soft-badge">
+          <i class="bi bi-compass me-2"></i>Your Personal Safety Journey
+        </div>
+
+        <h3 class="display-5 fw-bold mb-3">
+          Take Back Your Power
+        </h3>
+
+        <p class="fs-5 text-muted-2">
+          Your safety shouldn't be left to chance. 
+          <span class="fw-semibold" style="color:#c4b5fd">You deserve better.</span>
+        </p>
+
+        <div class="row g-4 text-start text-wrap mt-4">
+          <div class="col-lg-6">
+            <h5 class="fw-bold mb-3">In Just 2-3 Minutes, You'll Have:</h5>
+
+            <div class="card-glass d-flex align-items-start feature-tile  gap-3 p-3 rounded-3 mb-2">
+              <div class="icon-pill"><i class="bi bi-signpost"></i></div>
+              <div>
+                <div class="fw-semibold">Your Personal Safety Plan</div>
+                <div class="small text-muted-2">Tailored to your needs</div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start feature-tile gap-3 p-3 rounded-3 card-glass mb-2">
+              <div class="icon-pill"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <div class="fw-semibold">Practical Action Steps</div>
+                <div class="small text-muted-2">Heart-warming tips that empower you at night</div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start feature-tile gap-3 p-3 rounded-3 card-glass mb-2">
+              <div class="icon-pill"><i class="bi bi-people"></i></div>
+              <div>
+                <div class="fw-semibold">Community Connection</div>
+                <div class="small text-muted-2">Women who share your experiences</div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start feature-tile gap-3 p-3 rounded-3 card-glass">
+              <div class="icon-pill"><i class="bi bi-heart"></i></div>
+              <div>
+                <div class="fw-semibold">Peace of Mind</div>
+                <div class="small text-muted-2">Prepared and supported</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 text-center">
+            <img
+              class="img-fluid rounded-4xl shadow theme-swap"
+              src="{% static 'images/night-girl.gif' %}"
+              data-dark-src="{% static 'images/night-girl.gif' %}"
+              data-bright-src="{% static 'images/bright-house.gif' %}"
+              style="max-height:26rem; object-fit:cover"
+            />
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <button id="startCardBtn" class="btn btn-glow btn-lg px-4 py-3">
+            <i class="bi bi-person-check me-2"></i> Start Safety Self-Check
+            <i class="bi bi-arrow-right ms-2"></i>
+          </button>
+        </div>
+      </div>
+
+        <!-- Self-Assessment Card -->
+      <div id="safetyCard" class="card card-glass rounded-4xl d-none">
+        
+
+        <div class="card-body p-4 p-md-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h4 class="fw-bold mb-1">Your Personal Safety Assessment</h4>
+              <div class="small text-muted-2">
+                Step <span id="stepNow">1</span> of <span id="stepTotal">7</span> • Building your personalised plan
+              </div>
+            </div>
+            <button class="btn btn-outline-light rounded-circle" id="closeCardBtn" title="Close">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+
+          <div class="progress" style="height:.5rem">
+            <div id="progressBar" class="progress-bar" style="width:14%"></div>
+          </div>
+
+          <div id="stepArea" class="stepArea">
+            <div id="stepContainer" class="mb-4"></div>
+            <aside id="insightArea" class="insightArea d-none"></aside>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <button id="prevBtn" class="btn btn-outline-light" disabled>
+              <i class="bi bi-arrow-left me-2"></i>
+              Previous
+            </button>
+            <div id="dots" class="d-flex gap-1"></div>
+            <button id="nextBtn" class="btn btn-amber">
+              Next <i class="bi bi-chevron-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Card -->
+      <div id="resultsCard" class="card card-glass rounded-4xl d-none mt-4">
+        <div class="card-body p-4 p-md-5">
+
+       
+          <div id="planLive" class="visually-hidden" role="status" aria-live="polite"></div>
+
+        
+          <div id="personalizationResults" class="row g-3"></div>
+
+         
+          <!-- <div class="text-center mt-4">
+            <button id="retakeBtn" class="btn btn-outline-light">Retake assessment</button>
+          </div> -->
+        </div>
+      </div>
+
+    
+
+      <!-- Interactive Safety Map -->
+      
+      <div id="safety-map-block" class="mt-4 mb-5">
+        <div class="svm-mini-banner">
+          <div class="badge rounded-pill safety-venue-map-pill">
+            <i class="bi bi-compass me-2"></i>Interactive Safety Map
+          </div>
+
+          
+        </div>
+
+        <!-- Safety Map Feature Intro -->
+        <div id="svm-loc-prompt" class="card card-glass rounded-4xl mb-3" role="region" aria-labelledby="svm-loc-title">
+        <div class="card-body position-relative">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <div class="svm-icon-pill" aria-hidden="true">🗺️</div>
+          <h3 id="svm-loc-title" class="h5 mb-0">Safety Map, at a glance</h3>
+        </div>
+
+        <!-- One-liner -->
+        <p class="mb-2 text-muted text-start">
+          Explore safer ways home with live lighting, open venues, and safe modes.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="d-flex flex-wrap gap-2 mb-2 align-items-center chips-row" aria-label="Safety Map features">
+          <span class="svm-badge">🧭 Safer routes</span>
+          <span class="svm-badge">🛡️ Safe Modes</span>
+          <span class="svm-badge">⚠️ Report a hazard</span>
+          <span class="svm-badge">🏪 24/7 safe venues</span>
+          <span class="svm-badge">💡 Street lighting</span>
+
+          <!-- keep original how-to block as-is -->
+          <div id="svm-howto">
+            <button id="svm-howto-btn" type="button" class="btn-spotlight" aria-label="Replay tutorial">
+              How to Use This Map
+            </button>
+          </div>
+          
+        </div>
+
+    
+
+  </div>
+</div>
+
+
+
+
+<!-- Route Disruptions in a table  -->
+<section id="disruptions-panel" class="card card-glass rounded-4xl mb-3 d-none">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <div class="d-flex align-items-center gap-2">
+        <div class="svm-icon-pill">🚧</div>
+        <h3 class="h4 mb-0">Route disruptions near your path</h3>
+      </div>
+      <div class="d-flex flex-wrap gap-2" id="disruptions-summary">
+        <!-- filled by JS: active now / total / severity -->
+      </div>
+    </div>
+
+    <!-- stat tiles (mini) -->
+    <div id="disruptions-metrics" class="d-flex flex-wrap gap-2 mb-3"></div>
+
+    <!-- list -->
+    <div id="disruptions-list" class="d-flex flex-column gap-2"></div>
+
+    <!-- empty state -->
+    <div id="disruptions-empty" class="small text-muted-2 d-none">
+      No disruptions were found within 1 km of this route.
+    </div>
+  </div>
+</section>
+
+
+
+       
+        <!-- Map + Side Panel -->
+        <div class="card card-glass rounded-4xl" id="saf-map">
+          <div class="card-body p-0">
+            <div id="svm-stage" class="svm-stage">
+              <!-- Left: Safe venues panel (JS populates) -->
+              <aside id="svm-panel" class="svm-panel" aria-label="Safe venues"></aside>
+
+              <!-- Right: Map column -->
+              <div class="svm-map-col">
+             
+                <div id="svm-controls" class="svm-controls px-3 py-2 border-bottom">
+                  <div class="d-flex flex-wrap gap-2 align-items-center justify-content-between">
+                    <div class="gw-route flex-grow-1" style="max-width:100%">
+                      <div class="d-flex flex-nowrap align-items-stretch gap-2 w-100 gw-route-row">
+                        <input id="gw-origin" class="form-control flex-grow-1" placeholder="Start point" />
+                        <button id="gw-swap" class="btn btn-dark btn-icon" type="button" title="Swap" aria-label="Swap origin/destination">
+                          <!-- swap (arrow-left-right) -->
+                          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 7h11l-3-3l1.4-1.4L22.8 7l-6.4 4.4L15 10l3-3H7V7zm10 10H6l3 3l-1.4 1.4L1.2 17l6.4-4.4L9 14l-3 3h11v0z"/></svg>
+                        </button>
+
+                        <input id="gw-dest"   class="form-control flex-grow-1" placeholder="Destination" />
+                        <button id="gw-route" class="btn btn-primary" type="button">Go</button>
+                        <button id="gw-clear" class="btn btn-outline-light" type="button">Clear</button>
+                        <div id="svm-legend-screenshot"></div>
+                      </div>
+                    </div>
+
+                    <div class="svm-toggle-wrap d-flex gap-2">
+                      <button id="btn-lighting" class="svm-toggle on" type="button" aria-pressed="true" title="Street lighting">
+                        <span class="svm-ico" aria-hidden="true">
+                          <!-- lightbulb -->
+                          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M9 21h6v2H9zm3-20a7 7 0 0 1 4 12.8V16a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2.2A7 7 0 0 1 12 1"/></svg>
+                        </span>
+                        <span class="svm-label">Street lighting</span>
+                      </button>
+                      <button id="btn-venues" class="svm-toggle on" type="button" aria-pressed="true" title="Safe venues">
+                          <span class="svm-ico" aria-hidden="true">
+                            <!-- building -->
+                            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M3 22V2h18v20h-2v-2H5v2zM7 8h2V6H7zm4 0h2V6h-2zm4 0h2V6h-2zM7 12h2v-2H7zm4 0h2v-2h-2zm4 0h2v-2h-2zm-8 4h2v-2H7zm4 0h2v-2h-2zm4 0h2v-2h-2z"/></svg>
+                          </span>
+                          <span class="svm-label">Safe venues</span>
+                        </button>
+                    </div>
+
+                    
+                    <div id="wwi-prefbar" class="wwi-prefbar" role="tablist" aria-label="Route preference">
+                      <div class="wwi-prefgroup">
+                        <button class="wwi-prefbtn" data-pref="safer" aria-selected="false" title="Prefer safer" role="tab">
+                          <img src="{% static 'images/safer.png' %}" alt="Safer" width="25" height="25" />
+                        </button>
+                        <button class="wwi-prefbtn" data-pref="shorter" aria-selected="false" title="Prefer shorter" role="tab">
+                          <img src="{% static 'images/shoter.png' %}" alt="Shorter" width="25" height="25" />
+                        </button>
+                        <button class="wwi-prefbtn" data-pref="auto" aria-selected="true"  title="Auto (recommended)" role="tab">
+                          <img src="{% static 'images/auto.png' %}" alt="Auto" width="25" height="25" />
+                        </button>
+                      </div>
+                     
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Map -->
+                <div class="svm-map-wrap position-relative">
+                  <div id="map"
+                      style="height:520px; min-height:320px;"
+                      data-map-id="113d7a8f2e2e9058d53276d6"
+                      data-loading-gif="{% static 'images/data-loading.gif' %}"
+                      data-loading-size="128"></div>
+
+                  <!-- Bottom center: score pill + compare drawer (keep this inside .svm-map-wrap) -->
+                  <div id="wwi-score-footer" class="wwi-score-footer">
+                    <!-- Keep id=gw-score-pill so existing code can query it -->
+                    <button id="gw-score-pill" class="wwi-score-pill" type="button" aria-expanded="false">
+                      <span class="wwi-pill-text">Safety Score</span>
+                      <svg class="wwi-pill-caret" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="currentColor" />
+                      </svg>
+                    </button>
+
+                    <!-- Drawer is initially hidden; JS will populate -->
+                    <div id="wwi-compare" class="wwi-compare" hidden>
+                      <div class="wwi-compare-inner" role="region" aria-label="Compare routes">
+                        <!-- rows (Safer / Shorter) will be injected by JS -->
+                      </div>
+                    </div>
+                  </div>
+
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+     
+
+    
+
+    </div>
+
+    <section id="cta-safe" class="py-4">
+      <div class="container">
+        <div class="cta-wrap d-flex flex-column flex-lg-row align-items-center justify-content-between">
+          <div class="pe-lg-4 mb-4 mb-lg-0">
+            <h2 class="cta-title mb-3">Find Support</h2>
+            <p class="cta-sub mb-4">
+              Let's work together to create a digital safety strategy that delivers results.
+            </p>
+            <a href="{% url 'support' %}" class="btn cta-btn px-4 py-2 fw-semibold">
+              Get Support <span>→</span>
+            </a>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <img
+              src="{% static 'images/find-support.jpg' %}"
+              class="img-fluid rounded-4 shadow-sm cta-img-1"
+              style="max-width: 260px;"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+</div>
+
+
+
+<script defer src="{% static 'js/sqi-venue-dom-bridge.js' %}"></script>
+<script defer src="{% static 'js/safety-qi.js' %}"></script>
+<script defer src="{% static 'js/sqi-open-now-adapter.js' %}"></script>
+<!-- Load Google Maps once, with async+defer and async loader flag -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIqudBNaRgOYzDVVGmbHl5kb8Hcl-eskY&loading=async&libraries=geometry,visualization,places,marker&language=en&region=AU&callback=glowBoot"></script>
+
+<script>
+  window.glowBoot = function glowBoot() {
+    if (window.__initGlowMap_ran) return;
+    if (window.google?.maps && document.getElementById('map')) {
+      window.initGlowMap?.();
+    }
+  };
+  window.addEventListener('DOMContentLoaded', window.glowBoot, { once:true });
+  window.addEventListener('pageshow', window.glowBoot);
+</script>
+
+<!--
+<script defer>
+  const glowBoot = () => {
+    if (window.__initGlowMap_ran) return;
+    if (window.google?.maps && document.getElementById('map')) {
+      window.initGlowMap?.();
+    }
+  };
+  window.addEventListener('DOMContentLoaded', glowBoot, { once: true });
+  window.addEventListener('pageshow', glowBoot);
+</script>
+-->
+
+<script>
+(function () {
+  function onReady(fn){ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn,{once:true});}else{fn();}}
+
+  onReady(function initMapTutorial(){
+    const LS_KEY='mapTutSeen.v2';
+
+    // Overlay parts from base.html
+    const coach   = document.getElementById('mapCoach');
+    const hole    = document.getElementById('mapCoachHole');
+    const tip     = document.getElementById('mapCoachTip');
+    const textEl  = document.getElementById('mapCoachText');
+    const btnNext = document.getElementById('mapCoachNext');
+    const btnBack = document.getElementById('mapCoachBack');
+    const btnSkip = document.getElementById('mapCoachSkip');
+
+    // Trigger (gold button) — fixed label forever
+    const trigger = document.getElementById('svm-howto-btn');
+    if(!trigger) return;
+    trigger.textContent = 'How to Use This Map';
+    trigger.setAttribute('aria-label','How to Use This Map');
+
+    // --- NEW: elements for the "completed" glass card --------------------
+    const doneOverlay = document.getElementById('mapCoachDone');
+    const doneClose   = document.getElementById('mcdClose');
+
+    // Safe helpers to open/close the completion card (with optional GSAP)
+    function showDone(){
+      if(!doneOverlay) return;
+      doneOverlay.classList.add('show');
+      doneOverlay.setAttribute('aria-hidden','false');
+      if(window.gsap){
+        gsap.fromTo('.mcd-card',{y:24,opacity:0,scale:.98},{y:0,opacity:1,scale:1,duration:.35,ease:'power2.out'});
+      }
+      try{ doneClose?.focus({preventScroll:true}); }catch{}
+    }
+    function hideDone(){
+      if(!doneOverlay) return;
+      doneOverlay.classList.remove('show');
+      doneOverlay.setAttribute('aria-hidden','true');
+      try{ document.getElementById('svm-howto-btn')?.focus({preventScroll:true}); }catch{}
+    }
+    doneOverlay?.addEventListener('click', e=>{ if(e.target===doneOverlay) hideDone(); });
+    doneClose?.addEventListener('click', hideDone);
+    window.addEventListener('keydown', e=>{ if(doneOverlay?.classList.contains('show') && e.key==='Escape'){ hideDone(); } });
+
+    // If overlay block is missing, fail friendly
+    if(!(coach && hole && tip && textEl && btnNext && btnBack && btnSkip)){
+      trigger.addEventListener('click',()=>alert('Tutorial overlay not found. Paste the #mapCoach block near </body> in base.html.'),{once:true});
+      return;
+    }
+
+    // ---------------- utils: geometry & scrolling ----------------
+    function env(){
+      const fixed = getComputedStyle(coach).position==='fixed';
+      return {
+        fixed,
+        dx: fixed?0:(window.pageXOffset||document.documentElement.scrollLeft||0),
+        dy: fixed?0:(window.pageYOffset||document.documentElement.scrollTop||0),
+        vw: innerWidth, vh: innerHeight
+      };
+    }
+    function centerRect(container, frac=0.7){
+      const el=container||document.body, b=el.getBoundingClientRect(), w=b.width*frac, h=b.height*frac;
+      return { left:b.left+(b.width-w)/2, top:b.top+(b.height-h)/2, width:w, height:h,
+               right:b.left+(b.width+w)/2, bottom:b.top+(b.height+h)/2 };
+    }
+    function placeHole(rect, pad=12, r=12){
+      const {dx,dy}=env();
+      Object.assign(hole.style,{
+        left:  (Math.max(8, Math.round(rect.left+dx)-pad))+'px',
+        top:   (Math.max(8, Math.round(rect.top +dy)-pad))+'px',
+        width: (Math.round(rect.width)+pad*2)+'px',
+        height:(Math.round(rect.height)+pad*2)+'px',
+        borderRadius:(r||0)+'px'
+      });
+    }
+    function placeTip(rect, prefer='bottom'){
+      const {dx,dy,vw,vh}=env(), m=14, cx=rect.left+rect.width/2, cy=rect.top+rect.height/2;
+      const below=rect.bottom+m, above=rect.top-tip.offsetHeight-m, left=rect.left-tip.offsetWidth-m, right=rect.right+m;
+      const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)); let tx=cx, ty;
+      switch(prefer){
+        case 'top':   ty=(above>0?above:below); break;
+        case 'left':  ty=clamp(cy-tip.offsetHeight/2,8,vh-tip.offsetHeight-8);
+                      tx=(left>8?rect.left-m:rect.right+m+tip.offsetWidth/2);
+                      tip.style.transform='translate(-100%,0)'; break;
+        case 'right': ty=clamp(cy-tip.offsetHeight/2,8,vh-tip.offsetHeight-8);
+                      tx=(right+tip.offsetWidth<vw-8?rect.right+m+tip.offsetWidth/2:rect.left-m);
+                      tip.style.transform=(right+tip.offsetWidth<vw-8)?'translate(0,0)':'translate(-100%,0)'; break;
+        default:      ty=(below+tip.offsetHeight<vh?below:above);
+      }
+      if(prefer!=='left' && prefer!=='right'){
+        tx=clamp(cx, tip.offsetWidth/2+8, vw-tip.offsetWidth/2-8);
+        tip.style.transform='translate(-50%,0)';
+      }
+      tip.style.left=(tx+dx)+'px'; tip.style.top=(ty+dy)+'px';
+    }
+
+    // --- NEW: scroll the window AND any scrollable ancestors so the target is centered ---
+    function isScrollable(el){
+      const s=getComputedStyle(el);
+      const oy=s.overflowY, ox=s.overflowX;
+      const canY = (oy==='auto'||oy==='scroll') && el.scrollHeight>el.clientHeight;
+      const canX = (ox==='auto'||ox==='scroll') && el.scrollWidth>el.clientWidth;
+      return canY||canX;
+    }
+    function getScrollParents(el){
+      const out=[]; let p=el?.parentElement;
+      while(p && p!==document.body){ if(isScrollable(p)) out.push(p); p=p.parentElement; }
+      out.push(document.scrollingElement||document.documentElement); // window
+      return out;
+    }
+    function bringIntoView(el,{margin=24, center=true}={}){
+      if(!el) return;
+      const parents=getScrollParents(el);
+      parents.forEach(sp=>{
+        const rb = el.getBoundingClientRect();
+        const pb = sp===document.scrollingElement
+          ? {top:0,left:0,bottom:innerHeight,right:innerWidth,height:innerHeight,width:innerWidth, x:0, y:0}
+          : sp.getBoundingClientRect();
+
+        // vertical
+        let dy=0;
+        if(center){
+          const targetY = rb.top + rb.height/2;
+          const viewY   = pb.top + pb.height/2;
+          dy = (targetY - viewY);
+        }else{
+          if(rb.top < pb.top+margin) dy = rb.top - (pb.top+margin);
+          else if(rb.bottom > pb.bottom-margin) dy = rb.bottom - (pb.bottom-margin);
+        }
+
+        // horizontal (for side panel list, etc.)
+        let dx=0;
+        if(center){
+          const targetX = rb.left + rb.width/2;
+          const viewX   = pb.left + pb.width/2;
+          dx = (targetX - viewX);
+        }else{
+          if(rb.left < pb.left+margin) dx = rb.left - (pb.left+margin);
+          else if(rb.right > pb.right-margin) dx = rb.right - (pb.right-margin);
+        }
+
+        if(sp===document.scrollingElement){
+          window.scrollBy({top:dy, left:dx, behavior:'smooth'});
+        }else{
+          sp.scrollBy({top:dy, left:dx, behavior:'smooth'});
+        }
+      });
+    }
+
+    // Wait until the element's rect stops moving (scroll settled) or timeout
+    function waitForScrollSettled(el, timeout=600){
+      return new Promise(resolve=>{
+        let last=null, stable=0, t0=performance.now();
+        function tick(){
+          const r=el.getBoundingClientRect();
+          const sig=`${r.top.toFixed(1)},${r.left.toFixed(1)}`;
+          if(sig===last){ stable++; } else { stable=0; last=sig; }
+          if(stable>=2 || performance.now()-t0>timeout){ resolve(); }
+          else { requestAnimationFrame(tick); }
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    // Ensure target is visible, scrolled to center, and focused (without extra scroll)
+    async function ensureVisibleAndFocus(el, { focus = true } = {}) {
+  if (!el) return;
+
+  // Find the real scroll container (usually document.scrollingElement)
+  const scroller = document.scrollingElement || document.documentElement;
+
+  const needsScroll = (() => {
+    const rect = el.getBoundingClientRect();
+    const pad = 10;                      // Keep a little vertical breathing room
+    return rect.top < pad || rect.bottom > (window.innerHeight - pad);
+  })();
+
+  // If body is locked with overflow:hidden on iOS, temporarily unlock so scrolling works
+  const prevHtmlOv = document.documentElement.style.overflow;
+  const prevBodyOv = document.body.style.overflow;
+  if (needsScroll) {
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    await new Promise(r => requestAnimationFrame(r));
+    el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' });
+    await new Promise(r => setTimeout(r, 320)); // Wait for the scroll to settle
+    document.documentElement.style.overflow = prevHtmlOv;
+    document.body.style.overflow = prevBodyOv;
+  }
+
+  if (focus) {
+    // Make non-focusable elements temporarily focusable (iOS respects .focus() only then)
+    const had = el.hasAttribute('tabindex');
+    if (!had) el.setAttribute('tabindex', '-1');
+    try { el.focus({ preventScroll: true }); } catch {}
+    if (!had) el.removeAttribute('tabindex');
+  }
+
+}
+
+    // Keep spotlight in place during viewport moves
+    function onLiveMove(){ if(idx>=0) setStep(idx, /*fromLive*/true); }
+
+    // ---------------- steps (aligned to your red boxes) ---------------- gw-score-pill
+    const steps=[
+      { q:'#svm-loc-prompt', text:'Turn on location to see nearby safe venues and get better directions. You can skip this for now.', prefer:'bottom', pad:12, r:12, focus:true },
+      { 
+        q:'#svm-hz-report',
+        text: [
+          'Tap Report to mark a hazard on the map.',
+          '1) Pick an icon (ghost/bat/pumpkin).',
+          '2) Choose how long it stays: 15m / 30m / 60m.',
+          '3) Changed your mind? Tap Cancel to leave the report mode.'
+        ].join('\n'),
+        prefer:'top', pad:14, r:10, focus:true
+      },
+      { q:'#svm-panel',      text:'Browse the left list. Tap any item to open its card on the map.',                       prefer:'left', pad:14, r:10, focus:true },
+      { q:'#gw-origin',      text:'Enter your start point or use “My location”.',                                          prefer:'bottom',pad:12, r:10, focus:true },
+      { q:'#gw-dest',        text:'Enter your destination (Please ensure it\'s within City of Melbourne for best accuracy).', prefer:'bottom',pad:12, r:10, focus:true },
+      { q:'#gw-swap',        text:'Swap origin and destination in one tap.',                                               prefer:'bottom',pad:10, r:12, focus:true },
+      { q:'#gw-route',       text:'Press “Go / Directions” to draw your walking route in purple.',                         prefer:'top',  pad:12, r:12, focus:true },
+      { q:'#gw-clear',       text:'Clear the route and reset the map and list.',                                           prefer:'bottom',pad:10, r:12 , focus:true},
+      { q:'#btn-lighting',   text:'Toggle “Street lighting” to prioritise well-lit streets.',                              prefer:'bottom',pad:10, r:12, focus:true },
+      { q:'#btn-venues',     text:'Toggle “Safe venues” to show or hide venue markers and the list.',                      prefer:'bottom',pad:10, r:12 , focus:true},
+      {
+        q:'#wwi-prefbar',
+        text: [
+          'After you draw a route (press Go)',
+          'Pick a mode',
+          '• Safer: well-lit streets & trusted venues',
+          '• Shorter: quickest distance/time',
+          '• Auto: picks higher safety score'
+        ].join('\n'),
+        prefer:'bottom', pad:10, r:12
+      },
+      {
+        q:'#gw-score-pill',
+        text: [
+          'After you press Go, the yellow Safety Score pill appears (including route Disruptions).',
+          '• Tap it to compare Safer vs Shorter (safety %, distance, time).',
+          '• Tap “Make primary” to choose, or use the mode icons (Safer / Shorter / Auto).'
+        ].join('\n'),
+        prefer:'top', pad:16, r:12
+      },
+      { q:'#map',            text:'Tap a purple numbered icon or a safe venue icon to view a verified safe venue card.',    prefer:'top',   pad:20, r:12, rect:()=>centerRect(document.getElementById('map'),0.70) },
+      { q:'#map',            text:'After a route is drawn, tap the line to see nearby roadworks and closures.',     prefer:'top',   pad:20, r:12, rect:()=>centerRect(document.getElementById('map'),0.70) },
+    ];
+
+
+    let idx=-1;
+
+    async function setStep(i, fromLiveMove=false){
+      const dir=i>idx?1:-1; let j=Math.max(0,Math.min(i,steps.length-1)), el, step;
+      while(j>=0 && j<steps.length){
+        step=steps[j]; el=document.querySelector(step.q);
+        if(el || step.rect) break; j+=dir;
+      }
+      if(!el && !step?.rect){ close(true); return; }
+
+      idx=j; textEl.textContent=step.text;
+
+      // 1) move viewport & focus (only when user presses Next/Back; not on passive live moves)
+      if(el && !fromLiveMove){ await ensureVisibleAndFocus(el, { focus: step.focus !== false }); }
+
+      // 2) after scroll settles, measure & place spotlight
+      await Promise.resolve().then(()=>new Promise(r=>requestAnimationFrame(r)));
+      const rect = step.rect ? step.rect() : (el ? el.getBoundingClientRect() : null);
+      if(rect){ placeHole(rect, step.pad||12, step.r||12); placeTip(rect, step.prefer||'bottom'); }
+
+      btnBack.disabled=(idx===0);
+      btnNext.textContent=(idx===steps.length-1)?'Got it':'Next';
+    }
+
+
+    let _lockHandler = null;
+
+/**
+ * Prevents all user interactions (click, scroll, typing, etc.)
+ * Only tutorial buttons (Next / Back / Skip) remain usable.
+ */
+function lockAllInteractions() {
+  if (_lockHandler) return; // already locked
+
+  _lockHandler = (e) => {
+    const target = e.target;
+    const isTutorialBtn = target.closest?.('#btnNext, #btnBack, #btnSkip');
+    if (!isTutorialBtn) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  };
+
+  // Block all common interaction events
+  window.addEventListener('wheel', _lockHandler, { passive: false, capture: true });
+  window.addEventListener('keydown', _lockHandler, true);
+
+  // Lock page scrolling (especially for iOS Safari)
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+}
+
+/**
+ * Restores normal user interactions.
+ */
+function unlockAllInteractions() {
+  if (!_lockHandler) return;
+  window.removeEventListener('click', _lockHandler, true);
+  window.removeEventListener('mousedown', _lockHandler, true);
+  window.removeEventListener('mouseup', _lockHandler, true);
+  window.removeEventListener('touchstart', _lockHandler, true);
+  window.removeEventListener('touchmove', _lockHandler, true);
+  window.removeEventListener('wheel', _lockHandler, true);
+  window.removeEventListener('keydown', _lockHandler, true);
+
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+
+  _lockHandler = null;
+}
+
+    function open() {
+      if (coach.classList.contains('show')) return;
+      coach.classList.add('show');
+      coach.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lockAllInteractions();
+
+      // Disable all interactive elements while tutorial is active
+      const ids = [
+        'gw-origin', 'gw-dest', 'svm-hz-report',
+        'gw-swap', 'gw-route', 'gw-clear',
+        'btn-lighting', 'btn-venues'
+      ];
+
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        el?.setAttribute('disabled', 'true');
+      }
+
+      window.addEventListener('scroll', onLiveMove, { passive: true });
+      window.addEventListener('resize', onLiveMove);
+      setTimeout(() => setStep(0), 60);
+    }
+
+    function close(save) {
+      coach.classList.remove('show');
+      coach.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      unlockAllInteractions();
+
+      // Re-enable all previously disabled elements
+      const ids = [
+        'gw-origin', 'gw-dest', 'svm-hz-report',
+        'gw-swap', 'gw-route', 'gw-clear',
+        'btn-lighting', 'btn-venues'
+      ];
+
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        el?.removeAttribute('disabled');
+      }
+
+      if (save) {
+        try {
+          localStorage.setItem(LS_KEY, '1');
+        } catch {}
+      }
+
+      window.removeEventListener('scroll', onLiveMove);
+      window.removeEventListener('resize', onLiveMove);
+    }
+    function onKey(e){
+      if(e.key==='Escape') close(true);
+      else if(e.key==='ArrowRight' || e.key==='Enter') btnNext.click();
+      else if(e.key==='ArrowLeft') btnBack.click();
+    }
+
+    btnSkip.onclick = ()=>close(true);
+    btnBack.onclick = ()=>setStep(Math.max(0, idx-1));
+
+    // --- MOD: on final step, close spotlight then show the completion card ---
+    btnNext.onclick = ()=> (idx===steps.length-1 ? (close(true), setTimeout(showDone,120)) : setStep(idx+1));
+
+    coach.addEventListener('click', e=>{ if(e.target===coach) btnNext.click(); });
+
+    // public API + trigger
+    window.startMapTutorialOnce = function(){ let seen=false; try{ seen=localStorage.getItem(LS_KEY)==='1'; }catch{} if(!seen) open(); };
+    window.openMapTutorial = function(){ open(); };
+    trigger.addEventListener('click', ()=>window.openMapTutorial());
+    window.addEventListener('keydown', onKey);
+  });
+})();
+</script>
+
+
+<script>
+/* ===== Toastr global config (load once) ===== */
+window.onload = function () {
+  if (!window.toastr) {
+    console.error("Toastr not loaded");
+    return;
+  }
+
+  toastr.options = {
+    closeButton: false,
+    debug: false,
+    newestOnTop: false,
+    progressBar: true,
+    positionClass: "toast-top-right",
+    preventDuplicates: true,
+    showDuration: "200",
+    hideDuration: "200",
+    timeOut: "5000",
+    extendedTimeOut: "1000",
+    showEasing: "swing",
+    hideEasing: "linear",
+    showMethod: "fadeIn",
+    hideMethod: "fadeOut",
+    escapeHtml: false
+  };
+};
+
+
+/* Show a short intro when user switches to Auto manually. */
+function showAutoModeIntro() {
+  toastr.info(
+    [
+      "<b>Auto mode</b>",
+      "• Picks the route with the higher <b>safety score</b>.",
+      "• If scores are the same, it chooses <b>Shorter</b>.",
+    ].join("<br>")
+  );
+}
+
+/* Show the concrete decision after Auto compares Safer vs Shorter.
+let __lastAutoToastKey = "";
+function showAutoDecisionToast({ safer, shorter, primaryIsSafer }) {
+  // Defensive numbers -> percents
+  const sSafer   = Math.round(((safer?.score   ?? 0) * 100));
+  const sShorter = Math.round(((shorter?.score ?? 0) * 100));
+  const winner   = primaryIsSafer ? "Safer" : "Shorter";
+
+  // De-dup spam
+  const key = `${winner}|${sSafer}|${sShorter}`;
+  if (key === __lastAutoToastKey) return;
+  __lastAutoToastKey = key;
+
+  const lines = [
+    `<b>Auto selected: ${winner}</b>`,
+    `Safer score: ${sSafer}%`,
+    `Shorter score: ${sShorter}%`,
+    `Rule: pick higher safety score; ties → Shorter`
+  ];
+
+  // Optional: show quick travel deltas if available
+  if (safer?.durationText || safer?.distanceText || shorter?.durationText || shorter?.distanceText) {
+    lines.push(
+      [
+        "<span style='opacity:.85'>",
+        `Safer: ${safer?.distanceText ?? "-"} • ${safer?.durationText ?? "-"}`,
+        "<br>",
+        `Shorter: ${shorter?.distanceText ?? "-"} • ${shorter?.durationText ?? "-"}`,
+        "</span>"
+      ].join("")
+    );
+  }
+
+  toastr.info(lines.join("<br>"), "Auto decision");
+}
+*/
+</script>
+
+<script>
+  (function () {
+  const LOG = false;
+
+  // Parse "123 m" (ignore "km")
+  function parseMeters(text) {
+    if (!text) return NaN;
+    const m = String(text).toLowerCase().match(/(\d+(?:\.\d+)?)\s*m\b/);
+    return m ? parseFloat(m[1]) : NaN;
+  }
+
+  // Find the distance element nearest to an "open" badge
+  function findDistanceEl(fromEl) {
+    const row = fromEl.closest('.svm-item') || fromEl.closest('li, div');
+    return row ? row.querySelector('.svm-dist') : null;
+  }
+
+  // Compute the boolean without side-effects
+  function computeFlag(root) {
+    const openBadges = root.querySelectorAll('.svm-status.svm-status--open, .svm-status--open');
+    for (const badge of openBadges) {
+      const distEl = findDistanceEl(badge) || badge;
+      const meters = parseMeters(distEl?.innerText || distEl?.textContent || '');
+      if (LOG) console.debug('[SQI DOM]', { text: distEl?.innerText?.trim(), meters });
+      if (!Number.isNaN(meters) && meters <= 300) return true;
+    }
+    return false;
+  }
+
+  // Debounced evaluator: only publish + notify on change
+  let rafId = null;
+  let lastValue = undefined;
+  function scheduleEval(root) {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      const next = computeFlag(root);
+      if (next !== lastValue) {
+        lastValue = next;
+        window.__domVenueOpenNowWithin300 = next;
+        if (LOG) console.info('[SQI DOM] __domVenueOpenNowWithin300 =', next);
+        // Notify SQI only when the value flips, avoiding feedback loops
+        window.__glow_sqi_instance?.updateCenter?.();
+      }
+    });
+  }
+
+  function boot() {
+    // Watch only the venues list (fallback to panel, or body if missing)
+    const root =
+      document.getElementById('svm-panel-list') ||
+      document.getElementById('svm-panel') ||
+      document.body;
+
+    // Initial scan
+    scheduleEval(root);
+
+    // Observe DOM changes that matter for list content
+    const mo = new MutationObserver(() => scheduleEval(root));
+    mo.observe(root, {
+      childList: true,
+      subtree: true,
+      characterData: true
+      // attributes intentionally excluded to reduce noise
+    });
+
+    // Optional: let map code nudge a rescan after it re-renders the list
+    window.__rebuildOpenNowForSQI = () => scheduleEval(root);
+
+    // Also rescan when the page becomes visible again (e.g. tab switch)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') scheduleEval(root);
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
+})();
+</script>
+
+
+{% endblock %}

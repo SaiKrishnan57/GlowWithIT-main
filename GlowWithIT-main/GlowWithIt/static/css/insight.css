@@ -1,0 +1,1619 @@
+.btn-top {
+  
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  color: #ffb955;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  background: rgba(255, 185, 85, 0.08);
+  border: 1px solid rgba(255, 185, 85, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-top:hover {
+  background: rgba(255, 185, 85, 0.12);
+}
+
+.btn-top:focus-visible {
+  outline: 2px solid #ffd48a;
+  outline-offset: 2px;
+}
+
+.stat {
+  background: #0e1424;
+  color: #dfe6ff;
+  padding: 80px 0;
+}
+
+.stat-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.stat-center {
+  text-align: center;
+}
+
+.stat-text-for-strong {
+  color: #ffa34d;
+}
+
+.stat-h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-h3 {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-h4 {
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-lead {
+  color: #b6c0e3;
+  font-size: clamp(16px, 2.4vw, 20px);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-body {
+  color: #c7d2ff;
+  line-height: 1.7;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.stat-banner-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.stat-banner-1-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.stat-banner-1-media img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.stat-badge {
+  background: #ff7a1a;
+  color: #fff;
+  padding: 14px 18px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.stat-badge-main-text {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+.stat-badge-subtext {
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.stat-banner-copy {
+  padding-inline: 4px;
+}
+
+.stat-xl {
+  background: linear-gradient(90deg, #ff8a2a, #ffc166);
+  color: transparent;
+  margin-bottom: 8px;
+  font-size: clamp(44px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.stat-pill-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  color: #ffb066;
+  background: rgba(255, 138, 42, 0.12);
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 10px;
+  border: 1px solid rgba(255, 138, 42, 0.35);
+  border-radius: 999px;
+}
+
+.stat-ic {
+  width: 20px;
+  height: 20px;
+}
+.stat-panel {
+  background: linear-gradient(135deg, #132138, #1a2b47);
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.stat-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.stat-lg {
+  color: #ffa34d;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.stat-bars {
+  display: grid;
+  gap: 12px;
+}
+
+.stat-bar-row {
+  color: #cbd6ff;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.stat-bar {
+  background: #334569;
+  width: 110px;
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  display: block;
+  background: #ffa34d;
+  height: 100%;
+}
+
+.stat-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-tile {
+  background: rgba(255, 138, 42, 0.14);
+  border: 1px solid rgba(255, 138, 42, 0.35);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.stat-ic-lg {
+  color: #ffa34d;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.stat-tile-num {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.stat-tile-sub {
+  color: #cbd6ff;
+}
+
+.stat-story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.stat-alert {
+  background: rgba(255, 76, 76, 0.15);
+  color: #ff7f7f;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  border: 1px solid rgba(255, 76, 76, 0.35);
+  border-radius: 999px;
+}
+
+.stat-alert-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-stat-danger {
+  font-size: clamp(34px, 6vw, 44px);
+  font-weight: 900;
+  color: #ff7f7f;
+}
+
+.stat-box {
+  background: #111b30;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.stat-list {
+  color: #cbd6ff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.stat-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-dot {
+  background: #ffa34d;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.stat-story-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.stat-story-media img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.stat-chip {
+  background: rgba(10, 14, 26, 0.9);
+  color: #fff;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  padding: 12px 14px;
+  max-width: 80%;
+}
+
+.stat-chip-big {
+  color: #ff7f7f;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-chip-sub {
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.stat-call {
+  margin-top: 72px;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 138, 42, 0.12),
+    rgba(255, 198, 106, 0.12)
+  );
+  border: 1px solid rgba(255, 138, 42, 0.25);
+  border-radius: 24px;
+  padding: 36px;
+}
+
+.stat-btn {
+  background: linear-gradient(90deg, #ff8a2a, #ffb955);
+  color: #111;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.stat-btn:hover {
+  filter: brightness(1.05);
+}
+
+.stat-source {
+  color: #9fb0d9;
+  font-size: 13px;
+  margin-top: 12px;
+  opacity: 0.9;
+}
+
+.stat .stat-callout {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 146, 60, 0.14),
+    rgba(255, 146, 60, 0.08)
+  );
+  border: 1px solid rgba(255, 146, 60, 0.35);
+  border-left: 6px solid #ffa34d;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) inset;
+  color: #ffd7b0;
+}
+
+.stat .stat-callout-icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.stat .stat-callout-text {
+  margin: 0;
+  color: #ffd7b0;
+  font-weight: 600;
+}
+
+#crime-heatmap {
+  --heatmap-text: #e5e7eb;
+  --ev-muted: #cbd5e1;
+  --ev-soft: #94a3b8;
+  --ev-border: rgba(251, 146, 60, 0.35);
+  --ev-card-from: rgba(15, 23, 42, 0.9);
+  --ev-card-to: rgba(120, 53, 15, 0.18);
+  --ev-panel-from: rgba(2, 6, 23, 0.7);
+  --ev-panel-to: rgba(124, 45, 18, 0.18);
+  --ev-radius: 16px;
+}
+
+#crime-heatmap .ev-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.crime-heatmap-container{
+
+  background:linear-gradient(135deg,rgba(2,6,23,.7),rgba(124,45,18,.18));
+  border:1px solid rgba(249,115,22,.35);
+  border-radius:12px;
+  padding:12px;
+ 
+}
+
+.crime-heatmap-container .crimeHeatmapStat{
+
+  background:linear-gradient(135deg,rgba(2,6,23,.7),rgba(124,45,18,.18));
+  height:440px;
+  border:1px solid rgba(249,115,22,.35);
+  border-radius:12px;
+  padding:6px;
+  overflow: visible;
+
+}
+
+.crimeHeatMapText{
+
+  text-align:center;
+  color:#cbd5e1;
+  font-size:.9rem;margin-top:8px;
+}
+
+#crime-heatmap .ev-center {
+  text-align: center;
+}
+
+#crime-heatmap .ev-h2 {
+
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 8px 0 6px;
+}
+
+#crime-heatmap .ev-lead {
+  color: var(--ev-soft);
+  font-size: 1.05rem;
+  margin: 0 auto 18px;
+  max-width: 44rem;
+}
+
+#crime-heatmap .ev-cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin: 24px 0;
+}
+
+#crime-heatmap .ev-card {
+  padding: 18px;
+  border-radius: var(--ev-radius);
+  border: 1px solid var(--ev-border);
+  background: linear-gradient(135deg, var(--ev-card-from), var(--ev-card-to));
+  color: var(--heatmap-text);
+}
+
+#crime-heatmap .ev-card .ev-label {
+  font-size: 0.875rem;
+  color: var(--ev-muted);
+  margin-bottom: 4px;
+}
+
+#crime-heatmap .ev-card .ev-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+#crime-heatmap .ev-card.red .ev-label,
+#crime-heatmap .ev-card.red .ev-value {
+  color: #fecaca;
+}
+
+#crime-heatmap .ev-card.blue .ev-label,
+#crime-heatmap .ev-card.blue .ev-value {
+  color: #bfdbfe;
+}
+
+#crime-heatmap .ev-card.purple .ev-label,
+#crime-heatmap .ev-card.purple .ev-value {
+  color: #e9d5ff;
+}
+
+#crime-heatmap .ev-panel {
+  padding: 20px;
+  border-radius: var(--ev-radius);
+  border: 1px solid var(--ev-border);
+  background: linear-gradient(135deg, var(--ev-panel-from), var(--ev-panel-to));
+  color: var(--heatmap-text);
+}
+
+#crime-heatmap .ev-panel h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 14px;
+  color: #fff;
+}
+
+#crime-heatmap .ev-heatmap {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px 10px;
+}
+
+#crime-heatmap .ev-heatmap th,
+#crime-heatmap .ev-heatmap td {
+  border: 1px solid var(--ev-border);
+  border-radius: 8px;
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#crime-heatmap .ev-heatmap thead th {
+
+  color: var(--ev-muted);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+#crime-heatmap .ev-heatmap .ev-rowlabel {
+  text-align: right;
+  padding-right: 12px;
+  color: var(--ev-soft);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+#crime-heatmap .ev-heatmap .high {
+  color: #fff;
+}
+
+#crime-heatmap .ev-heatmap .low {
+  color: #e2e8f0;
+}
+
+#crime-heatmap .ev-legend {
+  color: var(--ev-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 2px;
+  font-size: 0.9rem;
+}
+
+#crime-heatmap .ev-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(249, 115, 22, 0.9);
+}
+
+#crime-heatmap .ev-insights {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.85),
+    rgba(120, 53, 15, 0.22)
+  );
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: var(--ev-radius);
+  border: 1px solid var(--ev-border);
+}
+
+#crime-heatmap .ev-insights h4 {
+  margin: 0 0 12px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+#crime-heatmap .ev-insights p {
+  color: var(--heatmap-text);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+
+#crime-heatmap .ev-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  margin-top: 10px;
+}
+
+#crime-heatmap .ev-mini {
+  color: var(--heatmap-text);
+  background: rgba(100, 116, 139, 0.18);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+#crime-heatmap .ev-mini h5 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+#crime-heatmap .ev-source {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--ev-muted);
+  text-align: center;
+}
+
+
+.kpi-grid {
+
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto 12px;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  text-align: center;
+}
+
+.kpi {
+
+  padding: 12px;
+  border: 1px solid rgba(249,115,22,.35);
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.kpi-total {
+
+  color: #e5e7eb;
+  background: linear-gradient(135deg, rgba(15,23,42,.9), rgba(120,53,15,.18));
+}
+
+.kpi-male {
+
+  color: #bfdbfe;
+  background: linear-gradient(135deg, rgba(15,23,42,.9), rgba(30,58,138,.18));
+}
+
+.kpi-female {
+
+  color: #e9d5ff;
+  background: linear-gradient(135deg, rgba(15,23,42,.9), rgba(88,28,135,.18));
+}
+
+
+.crime-split {
+
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.4fr 1fr; 
+  align-items: start;
+}
+
+.story section {
+
+  margin: 0 !important;
+}
+
+.story .chapter {
+
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.story .chapter + .chapter {
+  
+  margin-top: -24px;
+}
+
+.story {
+
+  background: #0e1424;
+}
+
+.story .bg-1 {
+
+  --accent: #ff8a2a;
+  --accent-rgb: 255, 138, 42;
+  --lead-tint: #ffd7b0;
+}
+
+.story .bg-2 {
+
+  --accent: #8b5cf6;
+  --accent-rgb: 139, 92, 246;
+  --lead-tint: #d9cffd;
+}
+
+.story .bg-3 {
+
+  --accent: #f472b6;
+  --accent-rgb: 244, 114, 182;
+  --lead-tint: #ffd0e8;
+}
+
+.story .bg-4 {
+
+  --accent: #22d3ee;
+  --accent-rgb: 34, 211, 238;
+  --lead-tint: #c3f3fb;
+}
+
+.story .bg-5 {
+
+  --accent: #d7e60c;
+  --accent-rgb: 251, 191, 36;
+  --lead-tint: #ffe7b3;
+}
+
+.story .chapter .tag {
+
+  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
+.story .chapter .tag .dot {
+
+  background: var(--accent) !important;
+}
+
+.story .chapter .story-title {
+
+  color: #fff;
+  text-shadow: 0 0 24px rgba(var(--accent-rgb), 0.35),
+    0 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.story .chapter .lead {
+
+  color: var(--lead-tint);
+}
+
+.crime-split {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.story {
+  --wrap: 1150px;
+}
+
+.story .wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.story .chapter {
+
+  padding: 64px 0;
+  border-radius: 24px;
+}
+
+.story .center {
+
+  text-align: center;
+}
+
+.chapter .tag {
+
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+.chapter .dot-1 {
+
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #fb923c;
+  flex-shrink: 0;
+}
+
+/* background color for insight 1 */
+.story .bg-1 {
+  background: linear-gradient(135deg, #201829, #0e1424);
+}
+
+.chapter .dot-2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #7525d2;
+  flex-shrink: 0;
+}
+
+/* background color for insight 2 */
+.story .bg-2 {
+  background: linear-gradient(135deg, #1e1830, #0f1a2b);
+}
+
+.chapter .dot-3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #f030d0;
+  flex-shrink: 0;
+}
+
+/* background color for insight 3 */
+.story .bg-3 {
+  background: linear-gradient(135deg, #142136, #0e1628);
+}
+
+.chapter .dot-4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #22d3ee;
+}
+
+/* background color for insight 4 */
+.story .bg-4 {
+  background: linear-gradient(135deg, #152837, #0f1f30);
+}
+
+.chapter .dot-5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #d7e60c;
+  flex-shrink: 0;
+}
+
+/* background for insight 5 */
+.story .bg-5 {
+  background: linear-gradient(135deg, #1f1a26, #0e1424);
+}
+
+/* Chapter headings that harmonize with your .stat typography */
+.story h1.story-title {
+  color: #fff;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  margin: 6px 0 4px;
+}
+
+.story h2.story-title {
+  color: #fff;
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 800;
+  margin: 6px 0 4px;
+}
+
+.story p.lead {
+  color: #b6c0e3;
+  font-size: clamp(16px, 2.2vw, 19px);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* key takeaway for the visuals */
+.story .hint {
+  background: rgba(251, 146, 60, 0.12);
+  color: #ffd7b0;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  border-radius: 14px;
+  padding: 14px 16px;
+  gap: 10px;
+}
+
+.story .hint i {
+  color: #ffb866;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+
+.hint {
+
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.05); 
+  color: #f8fafc;
+  gap: 8px;               
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hint i {
+
+  flex-shrink: 0;          
+  font-size: 1.2rem;
+  color: #facc15;          
+}
+
+.hint p {
+
+  margin: 0;
+  flex: 1;
+  word-break: break-word;  
+}
+
+/* Carousel placeholder */
+.story .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(280px, 86%);
+  padding-bottom: 8px;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.story .card {
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.06);
+  color: #dfe6ff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.story .chapter .stat-panel {
+  margin-top: 24px;
+}
+
+
+.insight-deck .insight-grid{
+    display:grid;
+    gap:24px; /* bigger gutters = less crowding */
+    grid-template-columns: 1fr;           /* mobile: one per row */
+  }
+  @media (min-width: 820px){
+    .insight-deck .insight-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (min-width: 1200px){
+    .insight-deck .insight-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  }
+
+  .insight-card{ padding:0; border-radius:20px; overflow:hidden; } /* stat-box visuals come from your theme */
+
+  .flip-card{ perspective: 1200px; min-height: 360px; }
+  .flip-inner{
+    position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .55s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+  }
+  .flip-inner.is-flipped{ transform: rotateY(180deg); }
+
+  .flip-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+
+  /* --- Immersive FRONT --- */
+  .flip-front{
+    display:block; position:relative; background: #0b1220;
+  }
+  .flip-front .media{
+    position:absolute; inset:0;
+  }
+  .flip-front .media img{
+    width:100%; height:100%; object-fit:cover;
+    filter: saturate(1.05) contrast(1.05) brightness(.9);
+  }
+  .flip-front .scrim{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg,
+      rgba(0,0,0,.05) 0%,
+      rgba(0,0,0,.35) 45%,
+      rgba(0,0,0,.75) 100%);
+  }
+  .flip-front .overlay{
+    position:absolute; left:0; right:auto; bottom:0;
+    padding:16px 16px 14px;
+    display:flex; flex-direction:column; gap:6px;
+    color:#e8edf7;
+
+    /* keep copy off the image’s center to avoid “blocking” */
+    max-width: min(72%, 560px);
+  }
+
+  /* --- Awareness mood accents (scoped) --- */
+.awareness .viz-block{ --accent:#8b5cf6; } /* default */
+.awareness .viz-block[data-group="abs"]{ --accent:#e11d48; }      /* ABS / AIHW -> rose/red */
+.awareness .viz-block[data-group="stopit"]{ --accent:#f59e0b; }   /* STOPIT -> amber */
+.awareness .viz-block[data-group="ptv"],
+.awareness .viz-block[data-group="city"]{ --accent:#10b981; }     /* PTV / City -> green */
+
+/* Accent the chart container with a soft ring & border */
+.awareness .fact-card{
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, rgba(255,255,255,.12));
+}
+.awareness .fact-card::after{
+  content:"";
+  position:absolute; inset:-1px;
+  border-radius:inherit; pointer-events:none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* Make the scope chips pick up the mood */
+.awareness .chip .dot{ background: var(--accent); }
+.awareness .chip{ border-color: color-mix(in srgb, var(--accent) 25%, rgba(255,255,255,.12)); }
+
+/* Give the narration card a matching, very light outline/glow */
+.awareness .narration-cloud{
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, rgba(255,255,255,.12));
+  box-shadow: 0 12px 30px -22px color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 16px;
+}
+
+  @media (max-width: 480px){
+    .flip-front .overlay{ max-width: 100%; }
+  }
+  .flip-front .chip{ align-self:flex-start; font-size:.8rem; color:#c4c9dc;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+    padding:.25rem .6rem; border-radius:999px; display:inline-flex; gap:.5rem; align-items:center;
+  }
+  .flip-front .title{ font: 700 1.15rem/1.2 system-ui, sans-serif; margin:2px 0 4px; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
+  .flip-front .stat{
+    display:inline-flex;            /* shrink to content */
+    align-items:baseline;
+    gap:.6rem;
+    max-width:max-content;
+    padding:.55rem .8rem;
+    border-radius:12px;
+    background: rgba(6,10,18,.55);  /* subtle glass */
+    border:1px solid rgba(255,255,255,.14);
+    backdrop-filter: blur(6px) saturate(1.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  }
+  .flip-front .stat .val{
+    font-weight:800;
+    font-size: clamp(1.6rem, 2.2vw + 1rem, 2.2rem);
+    line-height:1;
+    letter-spacing:-.02em;
+  }
+  .flip-front .stat .delta{ font-weight:700; font-size:.95rem; margin-top:.15rem; }
+  .flip-front .delta.up{ color:#22c55e; } .flip-front .delta.down{ color:#ef4444; }
+
+  .flip-front .flip-btn{
+    align-self:flex-start; margin-top:6px;
+    background:transparent; color:#e8edf7;
+    border:1px solid rgba(255,255,255,.18); border-radius:999px;
+    padding:.48rem .8rem; font-weight:600;
+  }
+
+  /* --- BACK --- */
+  .flip-back{
+    transform: rotateY(180deg);
+    display:flex; flex-direction:column; gap:10px;
+    padding:16px; background: rgba(17,24,39,.92);
+    min-height:360px;
+  }
+
+  /* Layering so the front content is visible */
+  .flip-card{ position:relative; }
+  .flip-front{ position:relative; min-height:360px; }
+  .flip-front .media{ z-index:1; }
+  .flip-front .scrim{ z-index:2; }
+  .flip-front .overlay{ z-index:3; }
+  .flip-front .overlay{ color:#e8edf7 !important; } /* guard against theme overrides */
+
+  /* Only the visible face is interactive */
+  .flip-card[aria-expanded="true"]  .flip-front { pointer-events: none; }
+  .flip-card[aria-expanded="false"] .flip-back  { pointer-events: none; }
+
+  /* Awareness: two-level dropdown */
+  .awareness .controls {
+    
+    display:flex;
+    justify-content:center;
+    gap:.75rem;
+    flex-wrap:wrap;
+    margin:16px 0 8px;
+  }
+
+  .awareness .select-glass{
+
+    appearance:none;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    color:#e5e7eb;
+    padding:.6rem .9rem;
+    border-radius:12px;
+    font-weight:600;
+    backdrop-filter: blur(6px) saturate(1.05);
+  }
+
+  .awareness .chip-row{
+    display:flex;
+    gap:.5rem;
+    flex-wrap:wrap;
+    margin:8px 0 12px;
+  }
+
+  .awareness .chip{
+
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.28rem .6rem;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:#cbd5e1;
+    font-weight:600;
+    font-size:.78rem;
+    white-space:nowrap;
+  }
+
+  .awareness .chip .dot{
+    width:.5rem;
+    height:.5rem;
+    border-radius:999px;
+    background:#8b5cf6;
+  }
+
+  .awareness .viz-block{
+    display:none;
+  }
+
+  .awareness .viz-block.is-active{display:block;}
+
+  
+
+
+
+
+  @media (prefers-reduced-motion: reduce){
+    .flip-inner{ transition:none; transform:none !important; }
+    .flip-back{ display:none; transform:none; }
+    .flip-card[aria-expanded="true"] .flip-back{ display:block; }
+  }
+
+@media (min-width: 576px) {
+
+  .crimeHeatmapStat {
+    min-height: 380px;
+  }
+}
+
+@media (min-width: 992px) {
+  
+  .crimeHeatmapStat {
+    min-height: 440px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  #crime-heatmap .ev-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .kpi-grid {
+    grid-template-columns: 1fr; 
+    max-width: 520px;
+  }
+
+  .crime-split {
+    grid-template-columns: 1fr; 
+  }
+
+  .stat-box {
+    order: 2;
+  }
+
+  .crime-heatmap-container {
+
+    order: 1;
+  }
+
+  
+  #gw-heatmap-chartjs .story-title {
+    font-size: clamp(20px, 6vw, 28px);
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 860px) {
+
+  .stat-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+
+  .crime-split {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .stat-story-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-banner-1 {
+
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+/* ================================
+   INSIGHTS — BRIGHT (purple) tune
+   ================================ */
+
+/* 1) page background: gentle lilac gradient + subtle purple glow */
+.gw-bright .story{
+  --ins-bg1: #F4EEFF;  /* light lilac */
+  --ins-bg2: #ECE6FB;  /* mauve paper */
+  --ins-ink: #2A1B3E;  /* deep aubergine (headlines) */
+  --ins-body:#3E3152;  /* darker body copy for contrast */
+  --ins-muted:#6B6179; /* secondary */
+
+  background:
+    radial-gradient(1100px 520px at 18% -8%, rgba(124,58,237,.12), transparent 60%),
+    linear-gradient(180deg, var(--ins-bg1) 0%, var(--ins-bg2) 100%);
+  color: var(--ins-body);
+}
+
+/* 2) headings + body text (darker) */
+.gw-bright .story .story-title,
+.gw-bright .story h1,
+.gw-bright .story h2,
+.gw-bright .story h3,
+.gw-bright .story h4{ color: var(--ins-ink); text-shadow: none; }
+
+.gw-bright .story .lead,
+.gw-bright .story p,
+.gw-bright .stat-body,
+.gw-bright .text-muted-2{ color: var(--ins-body) !important; }
+
+/* 3) panels/boxes: light purple surfaces instead of white */
+.gw-bright .story .stat-panel,
+.gw-bright .story .stat-box{
+  background: linear-gradient(160deg, #F5F0FF, #EEE8FB);
+  border: 1px solid #E1D7F6;
+  box-shadow: 0 10px 28px rgba(124,58,237,.12), inset 0 1px 0 rgba(255,255,255,.65);
+  color: var(--ins-body);
+}
+
+/* 4) big numbers + accents in purple family */
+.gw-bright .stat-lg,
+.gw-bright .stat-text-for-strong{ color:#7C3AED; }
+
+/* 5) bars/tiles tuned for lilac theme */
+.gw-bright .stat-bar{ background:#E9E0F7; }
+.gw-bright .stat-bar-fill{ background: linear-gradient(90deg,#7C3AED,#A855F7); }
+.gw-bright .stat-tile{
+  background: color-mix(in srgb, #C9B6D9 24%, #fff);
+  border: 1px solid #D8CFE6;
+  color: var(--ins-body);
+}
+.gw-bright .stat-ic-lg{ color:#7C3AED; }
+
+/* 6) “chip/tag” pill and dots to match purple, readable text */
+.gw-bright .chapter .tag{
+  color:#5B21B6;
+  background: color-mix(in srgb, #C1B6DD 45%, #fff);
+  border: 1px solid #BFAAE6;
+}
+.gw-bright .chapter .dot-1,
+.gw-bright .chapter .dot-2,
+.gw-bright .chapter .dot-3,
+.gw-bright .chapter .dot-4,
+.gw-bright .chapter .dot-5{ background:#7C3AED; }
+
+/* 7) heatmap container + KPIs (light purple shells) */
+.gw-bright .crime-heatmap-container{ background: #FFF; border:1px solid #E1D7F6; }
+.gw-bright .crime-heatmap-container .crimeHeatmapStat{ background:#FFF; border:1px solid #E1D7F6; }
+.gw-bright .kpi{
+  background:#fff; border:1px solid #E1D7F6; color:var(--ins-ink);
+}
+
+/* 8) flip-card text on BOTH faces = dark, readable */
+.gw-bright .flip-front .overlay{ color: var(--ins-ink) !important; }
+.gw-bright .flip-front .flip-btn{
+  color:#fff; background: linear-gradient(90deg,#7C3AED,#A855F7); border:0;
+}
+.gw-bright .flip-back{
+  background: linear-gradient(160deg, #F5F0FF, #EEE8FB);
+  color: var(--ins-body);
+}
+.gw-bright .flip-back .btn.btn-outline-light{
+  color:#5B21B6 !important; border-color:#C4B5FD !important; background:transparent !important;
+}
+
+/* 9) links + sources */
+.gw-bright .story a{ color:#6D28D9; }
+.gw-bright .story a:hover{ text-decoration: underline; }
+.gw-bright .stat-source{ color: var(--ins-muted); }
+/* ---------------------------------------------------------
+   BRIGHT MODE (Purple) — Insights page overrides
+   Reuses your --lx-* tokens defined on .gw-bright
+   Scope: only when <html class="gw-bright"> is present
+--------------------------------------------------------- */
+.gw-bright .story{
+  /* base “paper” + ink */
+  color: var(--lx-body);
+  background:
+    radial-gradient(900px 420px at 12% -6%, color-mix(in srgb, var(--lx-stripe-1) 10%, transparent), transparent 60%),
+    linear-gradient(180deg, color-mix(in srgb, var(--lx-lilac) 30%, #fff) 0%, #fff 100%);
+}
+
+/* Chapters → glass-paper panels (no heavy dark gradients) */
+.gw-bright .story .chapter{
+  background: linear-gradient(160deg, var(--lx-paper), var(--lx-paper2));
+}
+
+/* Headings & lead copy */
+.gw-bright .story .story-title{ color: var(--lx-head); text-shadow: none; }
+.gw-bright .story .lead{ color: var(--lx-muted); }
+
+/* Section tags & dots → purple family */
+.gw-bright .chapter .tag{
+  color: #5B21B6;
+  background: color-mix(in srgb, #C1B6DD 40%, #fff);
+  border: 1px solid color-mix(in srgb, #5B21B6 45%, #C1B6DD);
+}
+.gw-bright .chapter .dot-1,
+.gw-bright .chapter .dot-2,
+.gw-bright .chapter .dot-3,
+.gw-bright .chapter .dot-4,
+.gw-bright .chapter .dot-5{ background:#7C3AED; }
+
+/* Panels, boxes, “fact cards” */
+.gw-bright .stat-panel,
+.gw-bright .stat-box,
+.gw-bright .awareness .fact-card{
+  background: linear-gradient(160deg, var(--lx-paper), var(--lx-paper2)) !important;
+  border: 1px solid var(--lx-border) !important;
+  color: var(--lx-body) !important;
+  box-shadow: 0 8px 20px rgba(36,27,51,.10), inset 0 1px 0 rgba(255,255,255,.55) !important;
+}
+
+/* Big stats & emphasis → purple */
+.gw-bright .stat-lg,
+.gw-bright .stat-text-for-strong{ color:#7C3AED; }
+
+/* Bars, tiles, icons */
+.gw-bright .stat-bar{ background:#E8E0F6; }
+.gw-bright .stat-bar-fill{ background: var(--lx-accent); }
+.gw-bright .stat-tile{
+  background: color-mix(in srgb, var(--lx-lilac) 20%, #fff);
+  border: 1px solid var(--lx-border);
+}
+.gw-bright .stat-ic-lg{ color:#7C3AED; }
+
+/* Hint / takeaway callouts */
+.gw-bright .story .hint{
+  background: color-mix(in srgb, #7C3AED 10%, #fff);
+  border: 1px solid color-mix(in srgb, #7C3AED 45%, #E9D5FF);
+  color: var(--lx-head);
+}
+.gw-bright .story .hint i{ color:#7C3AED; }
+
+/* KPI pills */
+.gw-bright .kpi{
+  background: #fff;
+  border: 1px solid var(--lx-border);
+  color: var(--lx-head);
+}
+.gw-bright .kpi-total .bi,
+.gw-bright .kpi-male .bi,
+.gw-bright .kpi-female .bi{ color:#7C3AED; }
+
+/* Crime heatmap container → light “paper” with purple ring */
+.gw-bright .crime-heatmap-container{
+  background: linear-gradient(160deg, var(--lx-paper), var(--lx-paper2));
+  border:1px solid var(--lx-border);
+}
+.gw-bright .crime-heatmap-container .crimeHeatmapStat{
+  background:#fff;
+  border:1px solid var(--lx-border);
+}
+
+/* Heatmap token overrides (your CSS vars) */
+.gw-bright #crime-heatmap{
+  --heatmap-text: var(--lx-head);
+  --ev-muted:     var(--lx-muted);
+  --ev-soft:      color-mix(in srgb, var(--lx-head) 70%, #9ca3af);
+  --ev-border:    color-mix(in srgb, #7C3AED 38%, #E5DAFF);
+  --ev-card-from: #fff;
+  --ev-card-to:   color-mix(in srgb, #fff 92%, var(--lx-lilac) 8%);
+  --ev-panel-from:#fff;
+  --ev-panel-to:  color-mix(in srgb, #fff 90%, var(--lx-paper2) 10%);
+}
+.gw-bright #crime-heatmap .ev-card,
+.gw-bright #crime-heatmap .ev-panel{
+  color: var(--lx-body);
+}
+
+/* Flip cards */
+.gw-bright .flip-front .overlay{ color: var(--lx-head) !important; }
+.gw-bright .flip-front .chip{
+  color: #5B21B6;
+  background: color-mix(in srgb, #C1B6DD 40%, #fff);
+  border-color: color-mix(in srgb, #5B21B6 45%, #C1B6DD);
+}
+.gw-bright .flip-front .stat{
+  background: rgba(255,255,255,.85);
+  border-color: var(--lx-border);
+  color: var(--lx-head);
+}
+.gw-bright .flip-front .flip-btn{
+  color:#fff;
+  background: var(--lx-accent);
+  border: 0;
+}
+.gw-bright .flip-back{
+  background: linear-gradient(160deg, var(--lx-paper), var(--lx-paper2));
+  color: var(--lx-body);
+}
+.gw-bright .flip-back .btn.btn-outline-light{
+  color:#7C3AED !important;
+  border-color: color-mix(in srgb,#7C3AED 45%, #C4B5FD) !important;
+  background: transparent !important;
+}
+.gw-bright .flip-back .btn.btn-outline-light:hover{
+  background: color-mix(in srgb,#7C3AED 8%, #fff) !important;
+}
+
+/* Awareness controls + chips */
+.gw-bright .awareness .select-glass{
+  background:#fff; color:var(--lx-head);
+  border-color: var(--lx-border);
+}
+.gw-bright .awareness .chip{
+  background:#fff; color: var(--lx-head);
+  border-color: var(--lx-border);
+}
+.gw-bright .awareness .chip .dot{ background:#7C3AED; }
+
+/* Default awareness accent → purple glow & borders */
+.gw-bright .awareness .fact-card{ border-color: color-mix(in srgb,#7C3AED 35%, var(--lx-border)); }
+.gw-bright .awareness .narration-cloud{
+  border: 1px solid color-mix(in srgb,#7C3AED 30%, var(--lx-border));
+  box-shadow: 0 12px 30px -22px rgba(124,58,237,.45);
+  background: linear-gradient(160deg, var(--lx-paper), var(--lx-paper2));
+  color: var(--lx-body);
+}
+
+/* Buttons (e.g., “Back to top” that used .btn-warning) → purple CTA */
+.gw-bright .chapter .btn-warning{
+  background: var(--lx-accent) !important;
+  color:#fff !important;
+  border: 0 !important;
+  box-shadow: 0 12px 30px rgba(124,58,237,.25) !important;
+}
+.gw-bright .chapter .btn-warning:hover{ filter:brightness(1.06); transform:translateY(-1px); }
+
+/* Small text + sources */
+.gw-bright .stat-source,
+.gw-bright .text-muted-2{ color: var(--lx-muted) !important; }
+
+/* Links inside light cards */
+.gw-bright .story a{ color:#6D28D9; }
+.gw-bright .story a:hover{ text-decoration: underline; }
+/* ============================
+   INSIGHTS – Bright mode fixes
+   (works in any chapter: bg-1..bg-5)
+   ============================ */
+
+.gw-bright .story{
+  --ins-ink:      #2A1B3E;  /* headings / numbers */
+  --ins-body:     #3E3152;  /* body text */
+  --ins-muted:    #6B6179;  /* secondary text */
+  --ins-accent:   #7C3AED;  /* purple */
+  --ins-accent-2: #A855F7;  /* light purple */
+  --ins-paper-1:  #F7F3FB;  /* lilac */
+  --ins-paper-2:  #EEE8FB;  /* mauve */
+  --ins-border:   #E5DAFF;  /* soft purple edge */
+}
+
+/* Darker text inside panels (keeps your existing layouts) */
+.gw-bright .story .stat-panel{ color: var(--ins-body); }
+
+/* Bars */
+.gw-bright .story .stat-bar       { background:#E9E0F7; }
+.gw-bright .story .stat-bar-fill  { background:linear-gradient(90deg,var(--ins-accent),var(--ins-accent-2)); }
+.gw-bright .story .stat-bar-row   { color: var(--ins-muted); }
+
+/* Big headline number (e.g. 58%) */
+.gw-bright .story .stat-lg{ color: var(--ins-accent) !important; }
+
+/* Tiles (right column) – glass paper + readable text */
+.gw-bright .story .stat-tiles .stat-tile{
+  background: linear-gradient(160deg,#ffffff, var(--ins-paper-2));
+  border: 1px solid var(--ins-border);
+  color: var(--ins-body) !important;
+  box-shadow: 0 10px 24px rgba(124,58,237,.14), inset 0 1px 0 rgba(255,255,255,.65);
+  backdrop-filter: blur(8px) saturate(115%);
+  -webkit-backdrop-filter: blur(8px) saturate(115%);
+}
+
+/* Tile contents – force away from white */
+.gw-bright .story .stat-tiles .stat-tile .stat-ic-lg   { color: var(--ins-accent) !important; }
+.gw-bright .story .stat-tiles .stat-tile .stat-tile-num{ color: var(--ins-ink)    !important; }
+.gw-bright .story .stat-tiles .stat-tile .stat-tile-sub{ color: var(--ins-muted)  !important; }
+
+/* Optional: chapter tag readability in bright mode */
+.gw-bright .chapter .tag{
+  color:#5B21B6;
+  background: color-mix(in srgb,#C1B6DD 40%, #fff);
+  border: 1px solid color-mix(in srgb,#5B21B6 45%, #C1B6DD);
+}
+.gw-bright .chapter .dot-1,
+.gw-bright .chapter .dot-2,
+.gw-bright .chapter .dot-3,
+.gw-bright .chapter .dot-4,
+.gw-bright .chapter .dot-5{ background:#7C3AED; }
+/* =========================================
+   Flip cards — Bright mode readability fix
+   ========================================= */
+.gw-bright .insight-card .flip-front .overlay{
+  /* make all overlay text light */
+  color:#F7F5FF !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45);
+}
+
+.gw-bright .insight-card .flip-front .title{
+  color:#FFFFFF !important;
+}
+
+.gw-bright .insight-card .flip-front .scrim{
+  /* slightly darker gradient so white text pops */
+  background: linear-gradient(
+    180deg,
+    rgba(8,10,20,.12) 0%,
+    rgba(8,10,20,.48) 42%,
+    rgba(8,10,20,.80) 100%
+  );
+}
+
+/* keep the CTA strong + accessible on photos */
+.gw-bright .insight-card .flip-front .flip-btn{
+  background: linear-gradient(90deg,#7C3AED,#A855F7);
+  color:#fff;
+  border:0;
+  box-shadow: 0 6px 18px rgba(124,58,237,.35);
+}
+
+/* if you want the stat badge (62%, 22%, 52.3%) extra clear */
+.gw-bright .insight-card .flip-front .stat{
+  background: rgba(255,255,255,.92);
+  color:#2A1B3E;
+  border-color: rgba(255,255,255,.85);
+}
+
+/* ==== Bright mode chart tokens (Awareness) ==== */
+.gw-bright {
+  --chart-ink:   #3E3152; /* primary text on charts/legends */
+  --chart-muted: #6B6179; /* sources / small labels */
+  --chart-border:#E1D7F6; /* panel/legend ring */
+  --chart-bg:    #FFFFFF;
+}
+
+/* Make the fact card’s small source text darker */
+.gw-bright .awareness .stat-source { color: var(--chart-muted) !important; }
+
+/* Optional: a light “paper” frame around canvases (nice on lilac) */
+.gw-bright .awareness .chart-frame{
+  background: linear-gradient(160deg, var(--chart-bg), #FAF7FF);
+  border: 1px solid var(--chart-border);
+  border-radius: 12px;
+  padding: 8px;
+}
+

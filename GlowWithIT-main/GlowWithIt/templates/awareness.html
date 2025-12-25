@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}GlowWithIT — Community Awareness{% endblock %}
+{% block content %}
+
+<!--This html is for displaying awareness-related visuals and key insights by providing a drop-down list for users to explore-->
+
+<!-- Intro message section -->
+<section class="chapter bg-2" style="padding:48px 0;background:linear-gradient(135deg,rgba(2,6,23,.9),rgba(17,24,39,.85));color:#f8fafc">
+  <div class="wrap container text-center">
+    <h2 class="story-title">Gender Safety Awareness</h2>
+    <p class="lead mt-3">Real stats from ABS, PTV and Victoria Police show how risks change and where support is available. </p>
+    <p class="lead mt-3">Choose a source to see one clear chart. Every insight connects to its original report.</p>
+  </div>
+</section>
+
+<!-- Drop-down list to select different visuals -->
+<div class="container mt-3 mb-4">
+  <label for="sourceFilter" class="me-2 fw-semibold">Show source:</label>
+  <select id="sourceFilter" class="form-select d-inline-block" style="max-width:320px;">
+    <option value="abs-pss" selected>ABS — Feelings of safety</option>
+    <option value="abs-pss-harass">ABS — Harassment & stalking</option>
+    <option value="stopit">Victoria Police — STOPIT</option>
+    <option value="ptv">PTV — Night Network</option>
+    <option value="city">City of Melbourne — Budget/Lighting</option>
+  </select>
+</div>
+
+<!-- awareness-related visuals -->
+<section class="section-wrap bg-awareness">
+  <div class="container">
+    <!-- avoid walking alone -->
+    <section class="stat-panel mt-2 viz-block" data-source="abs-pss">
+      <div class="stat-grid-2">
+        <div class="chart-col"><div class="fact-card"><div id="chartAvoidNight" class="chart-frame"></div><div class="stat-source">ABS — Feeling safe (PSS 2021–22)</div></div></div>
+        <aside class="narration-cloud">
+          <div class="stat-lg">63%</div>
+          <div class="stat-h3">Women avoid walking alone after dark</div>
+          <p class="stat-body">Men: 31%. Lighting & presence reduce avoidance.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- sexual-harassment visuals -->
+    <section class="stat-panel mt-4 viz-block" data-source="abs-pss-harass">
+      <div class="stat-grid-2 flip">
+        <aside class="narration-cloud">
+          <div class="stat-lg">13%</div>
+          <div class="stat-h3">Women reported sexual harassment (12 months)</div>
+          <p class="stat-body">Men: 4.5%. Clear reporting & bystander tips matter.</p>
+        </aside>
+        <div class="chart-col"><div class="fact-card"><div id="chartSexHarass" class="chart-frame"></div><div class="stat-source">ABS — Sexual harassment (2021–22)</div></div></div>
+      </div>
+    </section>
+
+    <!-- stalking-related visuals -->
+    <section class="stat-panel mt-4 viz-block" data-source="abs-pss-harass">
+      <div class="stat-grid-2">
+        <div class="chart-col"><div class="fact-card"><div id="chartStalking" class="chart-frame"></div><div class="stat-source">ABS — Stalking (media release, 16 Oct 2024)</div></div></div>
+        <aside class="narration-cloud">
+          <div class="stat-lg">1 in 5</div>
+          <div class="stat-h3">Women have been stalked since age 15</div>
+          <p class="stat-body">Men: 1 in 15 (~2.7m adults stalked).</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- intimate-partner-violence-related visuals  -->
+    <section class="stat-panel mt-4 viz-block" data-source="abs-pss-harass">
+      <div class="stat-grid-2 flip">
+        <aside class="narration-cloud">
+          <div class="stat-lg">1 in 4</div>
+          <div class="stat-h3">Women have experienced partner violence since 15</div>
+          <p class="stat-body">Men: 1 in 14 (7.3%).</p>
+        </aside>
+        <div class="chart-col"><div class="fact-card"><div id="chartIPV" class="chart-frame"></div><div class="stat-source">AIHW (from ABS PSS)</div></div></div>
+      </div>
+    </section>
+
+    <!-- feel-safe-walking-around-vic-related visuals  -->
+    <section class="stat-panel mt-4 viz-block" data-source="abs-pss">
+      <div class="stat-grid-2">
+        <div class="chart-col"><div class="fact-card"><div id="chartVicNightSafe" class="chart-frame"></div><div class="stat-source">VicHealth Indicators (2015) via Women’s Health Atlas</div></div></div>
+        <aside class="narration-cloud">
+          <div class="stat-lg">44%</div>
+          <div class="stat-h3">Women feel safe walking alone at night (Victoria)</div>
+          <p class="stat-body">Men: 78.8%. Lighting & presence matter.</p>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- STOPIT-related visuals -->
+<section class="section-wrap bg-stopit">
+  <div class="container">
+    <section class="stat-panel mt-2 viz-block" data-source="stopit">
+      <div class="stat-grid-2">
+        <div class="chart-col"><div class="fact-card"><div id="chartSTOPIT" class="chart-frame"></div><div class="stat-source">ABC News (10 Jul 2024) / Victoria Police</div></div></div>
+        <aside class="narration-cloud">
+          <div class="stat-lg">STOPIT</div>
+          <div class="stat-h3">Report anonymously on public transport</div>
+          <p class="stat-body">3,000 reports • 60 investigations • 33 charged (first two years).</p>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!--positive-vibe-related visuals -->
+<section class="section-wrap bg-positive">
+
+  <div class="container">
+
+    <!--positive attitutes towards night shift workers-->
+    <section class="stat-panel mt-2 viz-block" data-source="ptv">
+      <div class="stat-grid-2 flip">
+        <aside class="narration-cloud">
+          <div class="stat-lg">24-hour PT</div>
+          <div class="stat-h3">All-night services on Friday & Saturday</div>
+          <p class="stat-body">Useful for night shifters: 2 of 7 nights run 24-hour services.</p>
+        </aside>
+        <div class="chart-col"><div class="fact-card"><div id="chartNightNetwork" class="chart-frame"></div><div class="stat-source">PTV — Night Network</div></div></div>
+      </div>
+    </section>
+
+   <!--positive attitutes or budgets-->
+    <section class="stat-panel mt-4 viz-block" data-source="city">
+      <div class="stat-grid-2">
+        <div class="chart-col"><div class="fact-card"><div id="chartBudget" class="chart-frame"></div><div class="stat-source">City of Melbourne & ABC News (2025)</div></div></div>
+        <aside class="narration-cloud">
+          <div class="stat-lg">$14m</div>
+          <div class="stat-h3">Record safety investment (2025–26)</div>
+          <p class="stat-body">100+ new CCTV; +$4.5m vs last year.</p>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+<script type="module" src="{% static 'js/awareness.js' %}" defer></script>
+
+{% endblock content %}

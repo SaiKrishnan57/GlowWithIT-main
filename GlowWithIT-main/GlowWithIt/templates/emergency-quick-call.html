@@ -1,0 +1,83 @@
+{% load static %}
+<!-- Floating Emergency Call Button -->
+<div id="fab-button" class="fab-btn">
+  <img src="{% static 'images/em-call.png' %}" class="phone-gif" alt="">
+  <span class="sos-badge">
+    <img src="{% static 'images/em-alert.png' %}" class="phone-gif" alt="">
+  </span>
+</div>
+
+<!-- Quick Call Panel -->
+<div id="fab-panel" class="fab-panel hidden">
+  <div class="fab-header">
+    <h3>Emergency Quick Call</h3>
+    <button id="close-panel" class="close-btn" aria-label="Close">✕</button>
+  </div>
+
+  <input id="caller-name" type="text" value="Emergency Contact" aria-label="Caller name" />
+
+  <!-- Single primary action -->
+  <div class="fab-actions">
+    <button id="start-sim-call" class="btn call-now">⚡ Start safety call</button>
+  </div>
+
+  <!-- Optional: opt out of auto-recording for this call -->
+  <label for="no-record" class="record-opt">
+    <input type="checkbox" id="no-record">
+    Don’t record this time
+  </label>
+
+  <p class="fab-tip">
+    Starts a simulated incoming call and <strong>records automatically</strong> so you have proof if needed.
+    Tap outside to close.
+  </p>
+</div>
+
+<!-- Active Call Overlay -->
+<div id="call-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="overlay-name">
+  <div class="call-box">
+    <div class="caller-avatar" aria-hidden="true">🆘</div>
+    <h3 id="overlay-name">Emergency Contact</h3>
+    <p>Incoming call...</p>
+
+    <!-- Recording badge (icon version) -->
+    <div id="rec-badge" class="rec-badge rec-badge--icon hidden" aria-live="polite">
+      <img
+        src="{% static 'images/em-record.png' %}"
+        alt=""
+        class="rec-icon"
+        width="18" height="18"
+      />
+      <span class="rec-text">Recording</span>
+    </div>
+
+    <!-- iOS-style pill buttons -->
+    <div class="call-actions call-actions--pill">
+
+       <button id="accept-call" class="action-btn accept" aria-label="Accept">
+        <span class="icon" aria-hidden="true">✔️</span>
+        <span class="txt">Accept</span>
+      </button>
+
+
+      <button id="end-call" class="action-btn decline" aria-label="Decline">
+        <span class="icon" aria-hidden="true">✖️</span>
+        <span class="txt">Decline</span>
+      </button>
+    </div>
+
+    <p class="overlay-tip">Tap outside or ❌ to end call</p>
+  </div>
+</div>
+
+<!-- Discreet recording confirmations -->
+<div id="rec-aria" class="sr-only" role="status" aria-live="polite"></div>
+<div id="rec-toast" class="rec-toast" aria-hidden="true"></div>
+<!--<audio id="rec-chime" preload="auto">
+  <source src="{% static 'audio/rec-start.mp3' %}" type="audio/mpeg">
+</audio>-->
+
+<!-- Default Ringtone -->
+<audio id="call-audio" src="{% static 'audio/classic.mp3' %}" preload="auto"></audio>
+
+<script defer type="module" src="{% static 'js/emergency-quick-call.js' %}"></script>

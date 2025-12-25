@@ -1,0 +1,284 @@
+{# templates/insights.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}GlowWithIT — Melbourne's Night Safety Data Story{% endblock %}
+
+{% block content %}
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+
+
+
+<!-- Emergency Contacts -->
+<section class="py-2 emergency-banner">
+  
+  <div class="container d-flex  justify-content-between align-items-center flex-wrap gap-2 text-white small">
+    
+    <div class="fw-semibold">Need help now?</div>
+
+    <div class="d-flex flex-wrap gap-3">
+      <a class="link-light text-decoration-underline" href="tel:000">000 (Emergency)</a>
+      <a class="link-light text-decoration-underline" href="tel:1800737732">1800RESPECT 1800 737 732</a>
+      <a class="link-light text-decoration-underline" href="tel:131114">Lifeline 13 11 14</a>
+      <a class="link-light text-decoration-underline" href="tel:1800015188">Safe Steps 1800 015 188</a>
+    </div>
+  </div>
+</section>
+
+<!--Support Section-->
+<section id="support" class="women-support women-support--wide">
+  <div class="women-support__wrap">
+    
+    <div class="women-support__center women-support__mb-16">
+      <div class="women-support__pill women-support__mb-8">
+        <i class="bi bi-heart-pulse-fill"></i>
+        <span>24/7 Support Services</span>
+      </div>
+      <h2 id="women-support-h2" class="women-support__h2 mt-4">You're Never Alone</h2>
+      <!--supportive message-->
+      <p class="women-support__lead">
+        Professional support services available around the clock for Melbourne's night workers. 
+        Whether you're dealing with stress, trauma, harassment, or just need someone to talk to, 
+        help is always available.
+      </p>
+    </div>
+
+    <!-- Crisis Support Image -->
+    <div class="women-support__grid-2 women-support__gap-12 women-support__mb-20 women-support__items-center">
+      <figure class="women-support__media">
+        <img
+          src="https://images.unsplash.com/photo-1704650334660-c209c086a865?auto=format&fit=crop&w=1080&q=80"
+          
+          class="women-support__img" />
+        <figcaption class="women-support__badge">
+          <div class="women-support__badge-big">24/7</div>
+          <div class="women-support__badge-sub">Always Available</div>
+        </figcaption>
+      </figure>
+
+      <div class="mt-4">
+        <h3 class="women-support__h3 women-support__mb-12">Immediate Crisis Support</h3>
+        <p class="women-support__body women-support__mb-12">
+          When you're in crisis, trained professionals are standing by to provide immediate support. 
+          These services are free, confidential, and available 24/7—no matter what time your shift ends.
+        </p>
+
+        <div class="women-support__stack-6 mt-4">
+
+          <!-- Triple Zero section-->
+          <article class="women-support__card mt-4">
+            <div class="women-support__card-head">
+              <div class="women-support__iconbox women-support__iconbox--red">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <div>
+                <h4 class="women-support__card-title">Triple Zero</h4>
+                <p class="women-support__phone women-support__phone-red">
+                  <a href="tel:000" class="call-link" aria-label="Call Triple Zero 000">
+                    <i class="bi bi-telephone-fill me-1"></i>
+                    000</a>
+                </p>
+              </div>
+            </div>
+            <p class="women-support__body women-support__mb-8">
+              Call 000 for emergency assistance.
+            </p>
+            <div class="women-support__meta">
+              <span class="women-support__ok"><i class="bi bi-clock"></i> 24/7 Available</span>
+            </div>
+          </article>
+
+          <!-- Beyond Blue section -->
+          <article class="women-support__card">
+            <div class="women-support__card-head">
+              <div class="women-support__iconbox women-support__iconbox--blue">
+                <i class="bi bi-headset"></i>
+              </div>
+              <div>
+                <h4 class="women-support__card-title">Beyond Blue</h4>
+                <p class="women-support__phone women-support__phone--blue">
+
+                  <a href="tel:1300224636" class="call-link">
+                    <i class="bi bi-telephone-fill me-1"></i>
+                    1300 22 4636
+                  </a>
+                </p>
+              </div>
+            </div>
+            <p class="women-support__body women-support__mb-8">
+              Support for anxiety, depression and suicide prevention that helps you manage your mental health and wellbeing.
+            </p>
+            <div class="women-support__meta">
+              <span class="women-support__ok"><i class="bi bi-clock"></i> 24/7 Available</span>
+              <span class="women-support__ok"><i class="bi bi-people"></i> Online Support Forums</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Women’s safety support section -->
+    <div class="women-support__grid-2 women-support__gap-12 women-support__mb-20 women-support__items-start mt-7">
+      <div>
+        <div class="women-support__mini-pill women-support__mb-8">
+          <i class="bi bi-person-check-fill" aria-hidden="true"></i>
+          <span>Women's Safety & Support</span>
+        </div>
+        <h3 class="women-support__h3">Specialised Support for Women</h3>
+        <p class="women-support__body women-support__mb-12">
+          These services understand the unique challenges and provide trauma-informed support 
+          for women facing harassment or violence during night work.
+        </p>
+
+        <div class="women-support__stack-4">
+
+          <!-- 1800RESPECT -->
+          <article class="women-support__mini">
+            <div class="women-support__mini-row">
+              <h4 class="women-support__mini-title">1800RESPECT</h4>
+              <span class="women-support__mini-phone women-support__txt--pink">
+                <a href="tel:1800737732" class="call-link">
+                  <i class="bi bi-telephone-fill me-1"></i>
+                  1800 737 732
+                </a>
+              </span>
+            </div>
+            <p class="women-support__mini-desc">
+              National sexual assault & domestic violence counselling. Crisis support and safety planning.
+            </p>
+
+            <div class="women-support__mini-meta">
+              <span>• 24/7</span><span>• Multilingual</span><span>• Online Chat</span>
+            </div>
+          </article>
+
+          <!-- Safe Steps Victoria -->
+          <article class="women-support__mini">
+            <div class="women-support__mini-row">
+              <h4 class="women-support__mini-title">Safe Steps Victoria</h4>
+              <span class="women-support__mini-phone women-support__txt--pink">
+                <a href="tel:1800015188" class="call-link">
+                  <i class="bi bi-telephone-fill me-1"></i>
+                  1800 015 188</a>
+                
+              </span>
+            </div>
+            <p class="women-support__mini-desc">
+              Victoria’s family violence response service. Crisis accommodation & safety planning.
+            </p>
+            <div class="women-support__mini-meta">
+              <span>• 24/7</span><span>• Emergency Accommodation</span><span>• Safety Planning</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <figure class="women-support__media">
+        <img
+          src="{% static 'images/women-support.jpg' %}"
+          class="women-support__img" />
+      </figure>
+    </div>
+
+
+    <section id="women-tips" class="women-support__mb-20">
+    <div class="women-tips__wrap">
+      <div class="women-tips__center">
+        <span class="women-tips__tag"><span class="women-tips__dot"></span><span>Personal Safety</span></span>
+        <h2 id="women-tips-h2" class="women-tips__h2">Essential Safety Strategies</h2>
+        <p class="women-tips__lead">
+          Practical, proven techniques to help Melbourne’s night workers stay safe—grounded in expert advice and real night-shift experience.
+        </p>
+      </div>
+
+      <div class="women-tips__panel">
+        <div class="women-tips__grid">
+
+          <!-- Tips-->
+          <div class="women-tips__col">
+            <h3 class="women-tips__h3 mt-3">Stay alert. Stay visible. Stay connected.</h3>
+            <ul class="women-tips__list mt-4">
+              <li>
+                <span class="women-tips__ic"><i class="bi bi-eye"></i></span>
+                <span><strong>Maintain situational awareness</strong> — head up, limit phone use on quiet streets, and trust your instincts if something feels off.</span>
+              </li>
+              <li>
+                <span class="women-tips__ic"><i class="bi bi-lightbulb-fill"></i></span>
+                <span><strong>Choose well-lit, busy routes</strong> — even if they add a few minutes. Avoid shortcuts through parks, alleys, or isolated areas.</span>
+              </li>
+              <li>
+                <span class="women-tips__ic" ><i class="bi bi-people"></i></span>
+                <span><strong>Travel in pairs or with friends</strong> — Travel with colleagues when possible, 
+                  establish check-in routines, and know who to call in different situations.</span>
+              </li>
+              <li>
+                <span class="women-tips__ic"><i class="bi bi-train-freight-front"></i></span>
+                <span><strong>Public transport & rideshare</strong> — use trusted services, share your trip details, and stay aware of your surroundings.</span>
+              </li>
+            </ul>
+
+            <div class="women-tips__hint">
+              <strong>Quick prep:</strong> Before your shift, share your route and expected arrival time with a trusted friend or family member.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <!-- How to Access Support section -->
+    <section class="women-support__panel">
+
+      <div class="women-support__center women-support__mb-12">
+        <h3 class="women-support__h3">How to Access Support</h3>
+        <p class="women-support__body women-support__max-2">
+          Getting help shouldn't be complicated. Here’s what to expect when you reach out.
+        </p>
+      </div>
+      
+
+      <div class="women-support__grid-4 women-support__gap-12 women-support__mb-16">
+
+        <!--Support step 1-->
+        <div class="women-support__step">
+          <div class="women-support__step-num women-support__step-num--blue">1</div>
+          <h4 class="women-support__step-title">It's Always Free</h4>
+          <p class="women-support__step-text">Crisis support services are free of charge.</p>
+        </div>
+        <!--Support step 2-->
+        <div class="women-support__step">
+          <div class="women-support__step-num women-support__step-num--green">2</div>
+          <h4 class="women-support__step-title">Confidential</h4>
+          <p class="women-support__step-text">Your conversations are private and protected.</p>
+        </div>
+
+        <!--Support step 3-->
+        <div class="women-support__step">
+          <div class="women-support__step-num women-support__step-num--purple">3</div>
+          <h4 class="women-support__step-title">No Judgment</h4>
+          <p class="women-support__step-text">Trained counsellors meet you with care and respect.</p>
+        </div>
+
+        <!--Support step 4-->
+        <div class="women-support__step">
+          <div class="women-support__step-num women-support__step-num--orange">4</div>
+          <h4 class="women-support__step-title">Choose Your Way</h4>
+          <p class="women-support__step-text">Call, text, chat online, or in person.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Go back to home button-->
+    <div class="text-center mt-3">
+      <a href="{% url 'home' %}"  class="btn btn-warning fw-bold mt-3" style="color:black">
+        ↑ Back to Home
+      </a>
+    </div>
+      
+    </section>
+
+
+
+{% endblock %}

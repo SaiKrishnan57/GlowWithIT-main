@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Simulate Video Call · Night Safety{% endblock %}
+
+{% block content %}
+
+
+<section class="vc-hero2 vc-hero2--blend" aria-labelledby="vc-hero2-title">
+  <div class="container vc-hero2__grid">
+    <div class="vc-hero2__copy">
+      <h1 id="vc-hero2-title" class="vc-hero2__title">Feel safer on your way home</h1>
+      <p class="vc-hero2__sub">Ready when you are: start or schedule a fake call, with recording if you want.</p>
+      <div class="vc-hero2__actions">
+        <a href="#vc-form" class="btn-primary-pill">Try a simulated call</a>
+      </div>
+    </div>
+
+    <figure class="vc-hero2__media" role="img"
+            aria-label="Friends hanging out together, conveying safety through community.">
+      <img src="{% static 'images/community-tips.gif' %}"
+           alt="" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<!-- Step-by-step: How the Simulated Call works -->
+<section class="container py-5 steps-section section-dark" id="steps">
+  <div class="text-center mb-4">
+    <h2 class="h3 fw-800 mb-2 text-uppercase">A Step by Step Guide</h2>
+    <p class="text-muted mb-0">From setup to exit in under a minute.</p>
+  </div>
+
+  <ol class="steps-grid">
+    <!-- 01 -->
+    <li class="step">
+      <div class="step-cap cap-1"><span>01</span></div>
+      <div class="step-card">
+        <h3 class="h6 fw-800 mb-1">Set your caller</h3>
+        <p class="small text-muted mb-2">Choose an Avatar and Name —you control what appears.</p>
+        
+      </div>
+    </li>
+
+    <!-- 02 -->
+    <li class="step">
+      <div class="step-cap cap-2"><span>02</span></div>
+      <div class="step-card">
+        <h3 class="h6 fw-800 mb-1">Pick delay & ringtone</h3>
+        <p class="small text-muted mb-2">Ring now or in 30s. Choose your ringtone.</p>
+        
+      </div>
+    </li>
+
+    <!-- 03 -->
+    <li class="step">
+      <div class="step-cap cap-3"><span>03</span></div>
+      <div class="step-card">
+        <h3 class="h6 fw-800 mb-1">Incoming screen</h3>
+        <p class="small text-muted mb-2">Phone rings. Accept or decline like a real call.</p>
+       
+      </div>
+    </li>
+
+    <!-- 04 -->
+    <li class="step">
+      <div class="step-cap cap-4"><span>04</span></div>
+      <div class="step-card">
+        <h3 class="h6 fw-800 mb-1">In-call controls</h3>
+        <p class="small text-muted mb-2">Do you feel like you need to record the call? Start discreet recording.</p>
+       
+      </div>
+    </li>
+  </ol>
+
+  <!-- timeline with colored dots -->
+  <div class="steps-timeline" aria-hidden="true">
+    <span class="dot dot-1"></span>
+    <span class="dot dot-2"></span>
+    <span class="dot dot-3"></span>
+    <span class="dot dot-4"></span>
+  </div>
+</section>
+
+
+
+<section id="vc-setup" class="container py-4">
+  <h1 class="vc-divider"><span>Simulate Phone Call</span></h1>
+
+  <!-- Config row (local only; nothing is stored server-side) -->
+  <form class="vc-config" id="vc-form" novalidate>
+    <div class="vc-config__head">
+      <h2 class="vc-title">Quick setup</h2>
+      <p class="vc-sub">Pick who’s calling, when it rings, and what it sounds like.</p>
+    </div>
+
+    <div class="vc-grid">
+      <!-- Avatars -->
+      <div class="vc-field vc-field--full">
+        <label class="vc-label">Choose an avatar</label>
+        <div id="vc-avatars" class="av-grid" role="listbox" aria-label="Choose a caller avatar"></div>
+      </div>
+
+      <!-- Caller name -->
+      <div class="vc-field">
+        <label for="vc-name" class="vc-label">Caller name</label>
+        <input class="vc-input" id="vc-name" placeholder="Cody Fisher">
+      </div>
+
+      <!-- Delay (segmented) -->
+      <div class="vc-field">
+        <span class="vc-label">Delay</span>
+        <div class="seg" role="radiogroup" aria-label="Delay">
+          <input class="seg__input" type="radio" name="vc-delay-r" id="d0" value="0" checked>
+          <label class="seg__btn" for="d0">Now</label>
+
+          <input class="seg__input" type="radio" name="vc-delay-r" id="d30" value="30">
+          <label class="seg__btn" for="d30">30s</label>
+
+          <input class="seg__input" type="radio" name="vc-delay-r" id="d60" value="60">
+          <label class="seg__btn" for="d60">1m</label>
+
+          <input class="seg__input" type="radio" name="vc-delay-r" id="d180" value="180">
+          <label class="seg__btn" for="d180">3m</label>
+        </div>
+
+        <!-- hidden select for compatibility -->
+        <select id="vc-delay" class="d-none">
+          <option value="0" selected>Now</option>
+          <option value="30">30s</option>
+          <option value="60">1m</option>
+          <option value="180">3m</option>
+        </select>
+      </div>
+
+      <!-- Theme (swatches) -->
+      <div class="vc-field">
+        <span class="vc-label">Theme</span>
+        <div class="swatches" aria-label="Theme">
+          <button type="button" class="swatch is-active" data-theme="vc-theme-pink"  title="Pink"></button>
+          <button type="button" class="swatch"         data-theme="vc-theme-sakura" title="Sakura" style="background-color:#fa9bbb;"></button>
+           <button type="button" class="swatch"         data-theme="vc-theme-beige"  title="Beige"  style="background-color:#fae49b;"></button>
+          <button type="button" class="swatch"         data-theme="vc-theme-yellow" title="Yellow" style="background-color:#fcba03;"></button>
+          <button type="button" class="swatch"         data-theme="vc-theme-orange" title="Orange" style="background-color:#f59120;"></button>
+
+            <button type="button" class="swatch"         data-theme="vc-theme-lime"   title="Lime"   style="background-color:#9ce058;"></button>
+            <button type="button" class="swatch"         data-theme="vc-theme-teal"  title="Teal"></button>
+             <button type="button" class="swatch"         data-theme="vc-theme-blue"  title="Blue"   style="background-color:#24e0dd;"></button>
+          <button type="button" class="swatch"         data-theme="vc-theme-sky"    title="Sky"    style="background-color:#9bc1fa;"></button>
+           <button type="button" class="swatch"         data-theme="vc-theme-purple" title="Purple" style="background-color:#da9ff5;"></button>
+        
+         
+        </div>
+
+        <!-- hidden select for compatibility -->
+        <select id="vc-theme" class="d-none">
+          <option value="vc-theme-pink" selected>Pink</option>
+          <option value="vc-theme-teal">Teal</option>
+          <option value="vc-theme-orange">Orange</option>
+          <option value="vc-theme-yellow">Yellow</option>
+          <option value="vc-theme-blue">Blue</option>
+          <option value="vc-theme-sakura">Sakura</option>
+          <option value="vc-theme-beige">Beige</option>
+          <option value="vc-theme-sky">Sky</option>
+          <option value="vc-theme-lime">Lime</option>
+          <option value="vc-theme-purple">Purple</option>
+        </select>
+      </div>
+
+      <!-- Ringtone -->
+      <div class="vc-field">
+        <label for="vc-tone" class="vc-label">Ringtone</label>
+        <select id="vc-tone" class="vc-input">
+          <option value="{% static 'audio/classic.mp3' %}">Classic</option>
+          <option value="{% static 'audio/crystal.mp3' %}">Crystal</option>
+          <option value="{% static 'audio/robot.mp3' %}">Robot</option>
+          <option value="{% static 'audio/soft.mp3' %}">Soft</option>
+          <option value="{% static 'audio/bell.mp3' %}">Bell</option>
+          <option value="{% static 'audio/lively.mp3' %}">Lively</option>
+        </select>
+
+        <!-- Volume tip + quick test -->
+        <div class="vc-sound-tip">
+          <span class="vc-speaker" aria-hidden="true">🔊</span>
+          <span class="vc-sound-copy">Tip: turn your volume up.</span>
+          <button type="button" id="vc-test-tone" class="link-btn">Play test</button>
+        </div>
+      </div>
+
+      <!-- Hang-up sound -->
+      <audio id="vc-end-sfx" preload="auto" src="{% static 'audio/hang-up.mp3' %}"></audio>
+
+
+    <div class="vc-actions">
+      <button type="button" id="vc-schedule" class="btn-primary-pill">Schedule</button>
+      <button type="button" id="vc-now" class="btn-ghost-pill">Ring Now</button>
+    </div>
+
+    <!-- tiny toast for feedback -->
+    <div id="vc-toast" class="vc-toast" aria-live="polite"></div>
+  </form>
+</section>
+
+<!-- Incoming screen (phone-like) -->
+<div id="vc-incoming" class="vc-fullscreen d-none vc-theme-pink" aria-hidden="true">
+  <audio id="vc-audio" preload="auto"></audio>
+
+  <div class="vc-phone-wrap">
+    <div class="vc-phone">
+      <div class="vc-phone-screen">
+        <!-- Status Bar -->
+        <div class="vc-phone-status">
+          <div class="vc-phone-icons">
+            <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="wifi"></span>
+          </div>
+          <div class="vc-phone-time" id="vc-time">00:00</div>
+          <div class="vc-phone-batt">
+            <span class="battery"><i></i></span>
+            <span class="pct">98%</span>
+          </div>
+        </div>
+
+        <!-- Call Header -->
+        <div class="vc-phone-header">
+          <p class="vc-phone-sub">Incoming call</p>
+          <h2 class="vc-phone-name" id="vc-caller">Unknown</h2>
+        </div>
+
+        <!-- Avatar + pulsing rings -->
+        <div class="vc-phone-center">
+          <div class="vc-pulse">
+            <span class="ring ring-a"></span>
+            <span class="ring ring-b"></span>
+            <div class="vc-phone-avatar">
+              <img id="vc-avatar" alt="caller">
+            </div>
+          </div>
+        </div>
+
+        <!-- Call info -->
+        <div class="vc-phone-meta">Mobile • WalkWithIT</div>
+
+        <!-- Primary actions -->
+        <div class="vc-phone-actions">
+          <div class="action">
+            <button class="btn-circle decline" id="vc-decline" aria-label="Decline">✕</button>
+            <p class="lab">Decline</p>
+          </div>
+          <div class="action">
+            <button class="btn-circle accept" id="vc-accept" aria-label="Accept">✓</button>
+            <p class="lab">Accept</p>
+          </div>
+        </div>
+
+        <!-- Home indicator -->
+        <div class="vc-phone-home"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ended overlay (stays on screen; modal pops above this) -->
+<div id="vc-ended" class="vc-fullscreen d-none vc-theme-pink" aria-hidden="true">
+  <div class="vc-phone-wrap">
+    <div class="vc-phone">
+      <div class="vc-phone-screen">
+        <!-- Status Bar (static) -->
+        <div class="vc-phone-status">
+          <div class="vc-phone-icons">
+            <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="wifi"></span>
+          </div>
+          <div class="vc-phone-time"></div>
+          <div class="vc-phone-batt">
+            <span class="battery"><i></i></span>
+            <span class="pct">98%</span>
+          </div>
+        </div>
+
+        <!-- Ended Card -->
+        <div class="vc-ended-wrap">
+          <div class="vc-ended-card">
+            <h2 class="vc-phone-name" id="vc-ended-name"></h2>
+            <p class="vc-ended-sub">Duration: <span id="vc-ended-time">00:00</span></p>
+            <p class="vc-ended-title">Call Ended</p>
+            <div class="vc-ended-icon">✕</div>
+          </div>
+        </div>
+
+        <!-- Home indicator -->
+        <div class="vc-phone-home"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- In-call screen (phone-like; simplified to match JS) -->
+<div id="vc-incall" class="vc-fullscreen d-none vc-theme-pink" aria-hidden="true">
+  <div class="vc-phone-wrap">
+    <div class="vc-phone">
+      <div class="vc-phone-screen">
+        <!-- Status bar -->
+        <div class="vc-phone-status">
+          <div class="vc-phone-icons">
+            <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="wifi"></span>
+          </div>
+          <div class="vc-phone-time">In Call</div>
+          <div class="vc-phone-batt">
+            <span class="battery"><i></i></span>
+            <span class="pct">98%</span>
+          </div>
+        </div>
+
+        <!-- Caller info -->
+        <div class="vc-phone-header in-call-header">
+          <span id="vc-timer" class="vc-call-timer">00:00</span>
+          <h2 class="vc-phone-name" id="vc-title-name">Emergency Contact</h2>
+          <p class="vc-call-number">+61 412 345 678</p>
+        </div>
+
+        <!-- Avatar (kept for theme parity) -->
+        <div class="vc-phone-center">
+          <div class="vc-phone-avatar">
+            <img id="vc-avatar" alt="caller">
+          </div>
+        </div>
+
+        <!-- Recording badge -->
+        <div id="vc-recording-indicator" class="vc-recording hidden">● Recording</div>
+
+        <!-- Controls grid -->
+        <div class="vc-controls-grid">
+          <button class="vc-ctl" id="ctl-record">⏺<span>Record</span></button>
+        </div>
+
+        <!-- End Call -->
+        <div class="vc-phone-actions">
+          <div class="action">
+            <button class="btn-circle end" id="ctl-end" aria-label="End Call">
+              <img src="{% static 'images/end-call.webp' %}" alt="End Call" class="end-icon">
+            </button>
+            <p class="lab">End</p>
+          </div>
+        </div>
+
+        <!-- Home indicator -->
+        <div class="vc-phone-home"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="vc-rec-modal" class="vc-rec-modal d-none" role="dialog" aria-modal="true" aria-labelledby="vc-rec-title">
+  <div class="vc-rec-modal__backdrop" tabindex="-1"></div>
+  <div class="vc-rec-modal__dialog" role="document">
+    <header class="vc-rec-modal__head">
+      <h3 id="vc-rec-title">Call ended</h3>
+      <button type="button" id="vc-rec-close" class="vc-rec-modal__close" aria-label="Close">✕</button>
+    </header>
+
+    <section class="vc-rec-modal__body">
+      <p class="vc-rec-sub">Your latest recording is ready.</p>
+
+      <!-- Latest item goes here -->
+      <div id="vc-recents-modal-list" class="vc-recents-list" aria-live="polite"></div>
+
+      <!-- Optional older items go here if you choose to mirror the side shelf -->
+      <div id="vc-recents-modal-older" class="vc-recents-list vc-recents-list--older d-none"></div>
+    </section>
+
+    <footer class="vc-rec-modal__foot">
+      <button type="button" id="vc-rec-back" class="btn-primary-pill">Back to setup</button>
+    </footer>
+  </div>
+</div>
+
+<!-- Snackbar (for “Recording downloaded”) -->
+<div id="vc-snackbar" class="vc-toast" aria-live="polite"></div>
+
+<link rel="stylesheet" href="{% static 'css/video-call.css' %}">
+<script>
+  window.VC_AVATARS = [
+    "{% static 'images/avatar1.png' %}",
+    "{% static 'images/avatar2.png' %}",
+    "{% static 'images/avatar3.png' %}",
+    "{% static 'images/avatar4.png' %}",
+    "{% static 'images/avatar5.png' %}",
+    "{% static 'images/avatar6.png' %}",
+    "{% static 'images/avatar7.png' %}",
+    "{% static 'images/avatar8.png' %}",
+    "{% static 'images/avatar9.png' %}",
+    "{% static 'images/avatar10.png' %}"
+  ];
+  window.VC_TAP_GIF = "{% static 'images/tap-screen.gif' %}";
+  window.VC_REC_ICON = "{% static 'images/record-mic.png' %}";
+   window.VC_CLOCK_GIF = "{% static 'images/clock-tick.gif' %}";
+</script>
+<script defer src="{% static 'js/video-call.js' %}"></script>
+{% endblock %}

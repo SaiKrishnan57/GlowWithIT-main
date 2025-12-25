@@ -1,0 +1,53 @@
+{# templates/includes/_header.html #}
+{% load static %}
+
+<!-- This _navbar.html is a global nav panel used across all pages;-->
+<nav class="navbar navbar-expand-lg navbar-dark glow-color sticky-top" id="siteNav">
+
+  <div class="container">
+
+    <!--Navigation with logo -->
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+      <!-- Dark-mode logo (default) -->
+      <img src="{% static 'images/WalkWithIT_dark.png' %}"
+          class="me-2 glow-logo logo-dark"
+          alt="WalkWithIT">
+
+      <!-- Bright-mode logo (shown only when .gw-bright is on <html>) -->
+      <img src="{% static 'images/WalkWithIT_light.png' %}"
+          class="me-2 glow-logo logo-light"
+          alt="WalkWithIT light"
+          aria-hidden="true">
+    </a>
+
+
+    <!--This collapsible nav and burger button are for the smaller screens-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+             aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'insight' %}active{% endif %}"
+             aria-current="page" href="{% url 'insight' %}">Insights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'support' %}active{% endif %}"
+             aria-current="page" href="{% url 'support' %}">Support</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'landing_fakecall' %}active{% endif %}"
+             aria-current="page" href="{% url 'landing_fakecall' %}">PhoneCalls</a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>

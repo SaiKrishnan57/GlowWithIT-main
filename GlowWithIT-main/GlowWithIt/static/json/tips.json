@@ -1,0 +1,34 @@
+{
+  "LIGHT": [
+    "Prefer well-lit main roads; skip parks/laneways after midnight.",
+    "If a block looks dim, add one block over to stay in shopfront light."
+  ],
+  "COMPANY": [
+    "Move toward people: venues, late-open grocers, taxi ranks.",
+    "If you can, walk the last blocks while on a call with a buddy."
+  ],
+  "VENUE": [
+    "Identify a staffed venue on your way (servo, 24/7 chemist).",
+    "If you need to wait, do it where staff can see you."
+  ],
+  "TRANSPORTATION": [
+    "Wait near PSO/driver or in the most populated carriage/stop zone.",
+    "Stand under the brightest camera’d area; avoid empty platforms."
+  ],
+  "EMERGENCY": [
+    "Keep 000 / 106 / 112 ready; know nearest Safe Haven & helplines.",
+    "Agree on a check-in time with a friend before you head off."
+  ],
+  "NAVIGATION": [
+    "Landmarks help: main roads, big intersections, tram spines.",
+    "Pre-decide a turn-back point; no shame in rerouting."
+  ],
+  "BATTERY": [
+    "Under 30%? Lower screen brightness; close battery-heavy apps.",
+    "Save a quick SMS draft instead of using data-heavy messengers."
+  ],
+  "AWARE": [
+    "Keep one ear free; scan ahead at corners & doorways.",
+    "Hold keys/phone ready; avoid bag rummaging while walking."
+  ]
+}

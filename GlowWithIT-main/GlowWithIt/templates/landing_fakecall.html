@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}GlowWithIT · Fake/Video Call Simulator{% endblock %}
+
+{% block content %}
+
+
+<style>
+@font-face{
+  font-family: "SuperSunday Shape";
+  src: url("/static/fonts/SuperSunday.ttf")   format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+
+<section class="gw-hero">
+  <!-- colorful blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center gy-4">
+      <div class="col-12 col-lg-6">
+
+        <!-- Empowering animated headline -->
+        <h1 class="display-5 fw-800 lh-tight mb-3 fc-hero-title">
+          <span class="fc-shimmer">Stay in control,</span>
+          <span class="fc-swap" data-effect="flip" data-words='[
+            "one tap away.",
+            "on your terms.",
+            "whenever you need it.",
+            "with quiet confidence."
+          ]'></span>
+        </h1>
+
+        <p class="lead text-muted mb-4">
+          Simulate calls, start discreet recordings, and step away from moments that don’t feel right
+        </p>
+
+        <!-- CTAs -->
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="{% url 'voice_call' %}" class="cta-call" id="cta-send-call" aria-label="Simulate a call now">
+            <svg class="cta-call__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.55 2.62a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.37 6.37l1.27-1.27a2 2 0 0 1 2.11-.45c.85.25 1.72.43 2.62.55A2 2 0 0 1 22 16.92z" fill="currentColor"/>
+            </svg>
+            <span>Send Call</span>
+          </a>
+        </div>
+
+        <!-- trust row -->
+        <div class="d-flex align-items-center gap-3 mt-4">
+          <div class="floating-avatars">
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- right column: hero illustration -->
+      <div class="col-12 col-lg-6">
+        <figure class="hero-art text-center">
+          <picture>
+            <source srcset="{% static 'images/incoming-call.jpeg' %}" type="image/jpeg">
+            <img
+              src="{% static 'images/incoming-call.jpeg' %}"
+              alt="Incoming call screen on a smartphone"
+              class="hero-img"
+              width="560" height="560"
+              loading="eager" decoding="async" fetchpriority="high"
+              sizes="(min-width: 992px) 560px, 80vw">
+          </picture>
+          <figcaption class="visually-hidden">Simulated incoming call illustration</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY YOU NEED THIS (split narrative, paragraph copy) -->
+<section class="container why-need py-5" id="why-need">
+  <div class="why-need__intro text-center mb-4">
+    <p class="kicker mb-2">Why you might need this</p>
+    <h2 class="h3 fw-800">A small tool for safer nights</h2>
+    <p class="text-muted mb-0">Built for women walking home, meeting new people, or moving through unfamiliar spaces.</p>
+  </div>
+
+  <!-- row 1 -->
+  <article class="split">
+    <figure class="split__media">
+      <img src="{% static 'images/why-exit.jpeg' %}" alt="Woman leaving a venue to take a call">
+    </figure>
+    <div class="split__copy">
+      <h3 class="h4 fw-800 mb-2">Create a natural exit</h3>
+      <p class="text-muted mb-3">
+        When a moment turns uncomfortable, a believable incoming call gives you a simple, socially
+        accepted way out. No confrontation, no long explanations—just “Sorry, I need to take this.”
+      </p>
+      <p class="text-muted mb-0">
+        Set it to ring now or in a few seconds, customize the caller name and ringtone, and keep moving
+        on your terms. There’s nothing to sign up for and nothing stored.
+      </p>
+    </div>
+  </article>
+
+  <!-- row 2  -->
+  <article class="split is-reverse">
+    <figure class="split__media">
+      <img src="{% static 'images/why-escalation.jpeg' %}" alt="Street at night with phone in hand">
+    </figure>
+    <div class="split__copy">
+      <h3 class="h4 fw-800 mb-2">Hold the line—without raising yours</h3>
+      <p class="text-muted mb-3">
+        Not every situation needs a scene. The call screen acts as a quiet social shield that signals
+        you’re busy and buys you space. If your gut says “save this,” you can start a discreet recording
+        in one tap.
+      </p>
+      <p class="text-muted mb-0">
+        The interface looks and feels like your normal phone. Everything stays on your device—you decide
+        what to keep and what to delete.
+      </p>
+    </div>
+  </article>
+
+  <!-- row 3 -->
+  <article class="split">
+    <figure class="split__media">
+      <img src="{% static 'images/why-proof.jpeg' %}" alt="Notes and timeline on screen">
+    </figure>
+    <div class="split__copy">
+      <h3 class="h4 fw-800 mb-2">Keep proof when it matters</h3>
+      <p class="text-muted mb-3">
+        If something feels off, capture a short, timestamped recording so details don’t blur later.
+        Everything stays on your device—you decide what to keep and what to delete.
+      </p>
+      <p class="text-muted mb-0">
+        It’s a small habit that can make a big difference: clear memories, confident decisions, and
+        a record you control.
+      </p>
+    </div>
+  </article>
+
+
+</section>
+
+
+<!-- Why choose WalkWithIT -->
+<section class="container py-5 why-section">
+  <div class="row g-4 align-items-start">
+    <div class="col-12 col-lg-5">
+      <h2 class="h3 fw-800 mb-3">Why choose <span class="grad-text">WalkWithIT</span>?</h2>
+      <p class="text-muted mb-4">Free simulated calls, privacy-first design, and tools that put you in control—anytime, anywhere.</p>
+      <a href="{% url 'home' %}" class="cta-call">Back To Home</a>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      <div class="info-grid">
+        <article class="info-card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 7H5v10h14V7Zm2-4H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg>
+          </div>
+          <div>
+            <h3 class="h6 fw-800 mb-1">Free Online Calling Tool</h3>
+            <p class="small text-muted mb-0">Trigger a realistic incoming call with one tap—no account needed.</p>
+          </div>
+        </article>
+
+
+        <article class="info-card">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5m0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5Z"/></svg>
+          </div>
+          <div>
+            <h3 class="h6 fw-800 mb-1">Your contact, your rules</h3>
+            <p class="small text-muted mb-0">Choose what to show. We keep your data off our servers.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- page JS -->
+<script type="module" src="{% static 'js/landing_fakecall.js' %}"></script>
+{% endblock %}

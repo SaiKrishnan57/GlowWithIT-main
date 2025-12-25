@@ -1,0 +1,76 @@
+{# templates/includes/_footer.html #}
+ {% load static %}
+ 
+<!-- This footer.html is a global footer used across all pages; -->
+
+<footer class="footer">
+  
+  <div class="footer-content">
+
+    <div class="footer-quicklink-desc">
+
+       <a href="{% url 'home' %}" class="d-flex footer-logo-link align-items-center">
+        <!-- Dark-mode logo (default) -->
+        <img
+          src="{% static 'images/WalkWithIT_dark.png' %}"
+          alt="WalkWithIT"
+          class="footer-img me-2 glow-logo logo-dark"
+        />
+
+        <!-- Bright-mode logo (shown only when .gw-bright is on <html>) -->
+        <img
+          src="{% static 'images/WalkWithIT_light.png' %}"
+          alt="WalkWithIT (bright)"
+          class="footer-img me-2 glow-logo logo-light"
+        />
+        </a>
+
+    </div>
+    <div class="footer-quicklink-desc">
+
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'insight' %}">Insights</a></li>
+        <li><a href="{% url 'support' %}">Support</a></li>
+        <li><a href="{% url 'landing_fakecall' %}">Phone Call</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-quicklink-desc">
+
+      <h4>Contact</h4>
+      <p>Email: support@glowwithit.com.au</p>
+      <p>Phone: +61 123 456 789</p>
+    </div>
+    
+   <div class="footer-quicklink-desc">
+
+     <h4 class="text-alert mt-2">Emergency Contacts</h4>
+      <p class="mt-2">Emergency Services</p>
+      <a href="tel:000" class="call-link text-danger">
+         <i class="bi bi-telephone-fill me-1"></i>000
+      </a>
+      <p  class="mt-2">Police Assistance</p>
+     
+      <a href="tel:131444" class="call-link text-warning">
+            <i class="bi bi-telephone-fill me-1"></i>
+              131 444
+        </a>
+      <p  class="mt-2">Lifeline Crisis Support</p>
+      <a href="tel:131114" class="call-link text-success">
+        <i class="bi bi-telephone-fill me-1"></i>
+              13 11 14
+      </a>
+   </div>
+    
+
+
+  
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 WalkWithIT. All rights reserved.</p>
+  </div>
+
+</footer>
