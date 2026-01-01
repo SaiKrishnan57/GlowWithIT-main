@@ -48,8 +48,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "parking_db",  # RDS DB name
         "USER": "admin",  # RDS admin username
-        "PASSWORD": "YourPassword123!",
-        "HOST": "tp04-db.c7em6a6ua1oh.ap-southeast-2.rds.amazonaws.com",  #  AWS RDS endpoint
+        "PASSWORD": "Skrish57",
+        "HOST": "sk-db1.c70ecqe4chh1.ap-south-1.rds.amazonaws.com",  #  AWS RDS endpoint
         "PORT": "3306",
     }
 }
